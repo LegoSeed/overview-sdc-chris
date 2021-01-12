@@ -1,2 +1,2 @@
-# FEC-LEGO
+# Product-Overview
 Front end capstone project to replicate a popular webpage with functionality
