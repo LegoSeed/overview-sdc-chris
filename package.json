@@ -7,7 +7,7 @@
     "start": "nodemon server",
     "build": "webpack",
     "watch": "webpack -w",
-    "test": "echo \"Hello\" && exit 0"
+    "test": "jest"
   },
   "keywords": [],
   "author": "Hack Reactor <curriculum.team@hackreactor.com>",
