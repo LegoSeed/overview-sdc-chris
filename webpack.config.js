@@ -1,7 +1,10 @@
 const path = require('path');
 
-const SRC_DIR = path.join(__dirname, 'src');
+const SRC_DIR = path.join(__dirname, 'frontend', 'src');
 const OUT_DIR = path.join(__dirname, 'public');
+
+console.log('dirname --', __dirname);
+console.log('SRC_DIR ---', SRC_DIR);
 
 module.exports = {
   entry: path.join(SRC_DIR, 'index.js'),
