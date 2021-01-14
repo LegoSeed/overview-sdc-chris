@@ -1,12 +1,12 @@
-import React from 'react';
-import Enzyme from 'enzyme';
-import { configure } from 'enzyme';
-import { shallow, mount, render } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+// import React from 'react';
+// import Enzyme from 'enzyme';
+// import { configure } from 'enzyme';
+// import { shallow, mount, render } from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
 
-// const wrapper = shallow(<Foo />);
+// // const wrapper = shallow(<Foo />);
 
-configure({ adapter: new Adapter() });
+// configure({ adapter: new Adapter() });
 
 test('adds 1 + 2 to equal 3', () => {
   expect(1 + 2).toBe(3);
