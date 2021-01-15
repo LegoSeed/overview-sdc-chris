@@ -10,11 +10,11 @@ jobs:
       - checkout
       - node/install-packages
       - run:
-        name: 'seed db'
-        command: npm run seed
+          name: 'seed db'
+          command: npm run seed
       - run:
-        name: 'run tests with npm'
-        command: npm run test
+          name: 'run tests with npm'
+          command: npm run test
 workflows:
   run-unit-tests:
     jobs:
