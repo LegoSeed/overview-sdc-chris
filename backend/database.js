@@ -29,6 +29,15 @@ const legoSchema = new mongoose.Schema({
 
 const LegoList = mongoose.model('legos', legoSchema);
 
+const getAllLegos = (callback) => {
+  LegoList.find((err, legos) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, legos);
+    }
+  });
+};
 // const Legos = new LegoList({
 // brand: 'TechNic',
 // name: 'Ducati Panigale V4 R',
@@ -48,3 +57,6 @@ const LegoList = mongoose.model('legos', legoSchema);
 // module.exports = {
 
 // }
+module.exports = {
+  getAllLegos,
+};

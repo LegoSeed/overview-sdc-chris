@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server",
+    "start": "nodemon backend/server",
     "build": "webpack",
     "watch": "webpack -w",
     "test": "jest"
