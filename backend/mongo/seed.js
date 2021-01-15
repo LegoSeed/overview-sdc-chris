@@ -6,7 +6,7 @@ const { MongoClient } = require('mongodb');
 const assert = require('assert');
 // const _ = require('lodash');
 // Connection URL
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://localhost:27017/test/legos';
 
 // Database Name
 const dbName = 'legos';
@@ -37,9 +37,9 @@ MongoClient.connect(url, (err, client) => {
       vipPoints: faker.random.number(200),
       itemNum: faker.random.number({ min: 12530, max: 25320 }),
       pictures: imageCollection,
-      reviewTotal: faker.number.random(200),
+      reviewTotal: faker.random.number(200),
     };
-    users.push(legoItem);
+    legos.push(legoItem);
 
     // visual feedback always feels nice!
     console.log(legoItem.companyName);
