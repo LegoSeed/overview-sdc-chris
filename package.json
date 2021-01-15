@@ -9,6 +9,7 @@
   "scripts": {
     "start": "nodemon backend/server/server",
     "build": "webpack",
+    "seed": "node backend/mongo/seed",
     "watch": "webpack -w",
     "test": "jest"
   },

@@ -27,8 +27,8 @@ MongoClient.connect(url, (err, client) => {
   let legos = [];
   for (let i = 0; i < 100; i += 1) {
     let legoItem = {
-      brand: faker.company.companyName,
-      name: faker.commerce.productName,
+      brand: faker.company.companyName(),
+      name: faker.commerce.productName(),
       reviewAvg: faker.random.number({ min: 3.5, max: 5, precision: 0.01 }),
       price: faker.random.number({ min: 10, max: 89 }),
       quantity: faker.random.number(13),
