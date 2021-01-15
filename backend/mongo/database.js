@@ -1,3 +1,4 @@
+const { Decimal128 } = require('mongodb');
 const mongoose = require('mongoose');
 // const { array } = require('prop-types');
 // const db = require('./index.js');
@@ -17,7 +18,7 @@ connection.once('open', () => {
 const legoSchema = new mongoose.Schema({
   brand: String,
   name: String,
-  reviewAvg: Number,
+  reviewAvg: Decimal128,
   price: Number,
   quantity: Number,
   ageRec: Number,
@@ -25,6 +26,7 @@ const legoSchema = new mongoose.Schema({
   vipPoints: { type: Number, default: 0 },
   itemNum: Number,
   pictures: Array,
+  reviewTotal: Number,
 });
 
 const LegoList = mongoose.model('legos', legoSchema);
@@ -38,25 +40,17 @@ const getAllLegos = (callback) => {
     }
   });
 };
-// const Legos = new LegoList({
-// brand: 'TechNic',
-// name: 'Ducati Panigale V4 R',
-// reviewAvg: 51,
-// price: 69.99,
-// quantity: 0,
-// ageRec: 10,
-// pieceCount: 646,
-// vipPoints: 0,
-// itemNum: 42107});
-// Legos.save().then(() => console.log('LEGGO my EGGO'));
 
-// const createItem = ((item, callback) => {
-
-// })
-
-// module.exports = {
-
-// }
 module.exports = {
   getAllLegos,
 };
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/1",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/2",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/3",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/4",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/5",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/6",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/7",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/8",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/9",
+// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/10"
