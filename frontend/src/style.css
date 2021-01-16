@@ -1,0 +1,23 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+}
+
+.greeting {
+    display: block;
+    padding: 3rem;
+    border-radius: 15px;
+    background-color: black;
+    font-size: 2rem;
+}
