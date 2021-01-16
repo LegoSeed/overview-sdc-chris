@@ -4,12 +4,5 @@ build/*
 # dependencies
 /node_modules
 
-#s3 IAM access key ID
-AKIASZ73FZQ72HCNKWB3
-
-#secret access key s3 IAM
-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
-
-
 # ducati buck uri 
 s3://legopics/Ducati/ (from 1 - 10)
