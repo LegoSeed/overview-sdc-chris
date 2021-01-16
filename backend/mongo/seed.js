@@ -40,9 +40,7 @@ MongoClient.connect(url, (err, client) => {
       reviewTotal: faker.random.number(200),
     };
     legos.push(legoItem);
-
     // visual feedback always feels nice!
-    console.log(legoItem.companyName);
   }
   legoCollection.insertMany(legos);
 
