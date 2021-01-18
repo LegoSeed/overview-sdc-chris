@@ -4,8 +4,8 @@ const db = require('../mongo/database.js');
 
 const PORT = 3003;
 const app = express();
-
-app.use(express.static(path.join(__dirname, '.', 'public')));
+app.use(express.static(path.join(__dirname, '../../public')));
+// app.use(express.static('/Users/jd/HackReactor/Product-Overview/public'));
 
 app.get('/legos', (req, res) => {
   // res.send('hello');
