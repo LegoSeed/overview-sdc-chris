@@ -41,6 +41,18 @@ const getAllLegos = (callback) => {
   });
 };
 
+const getDucatiLego = (callback) => {
+  const query = LegoList.where({ name: "Ducati Panigale V4 R" });
+  query.findOne((err, result) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, result);
+    }
+  });
+};
+
 module.exports = {
   getAllLegos,
+  getDucatiLego,
 };

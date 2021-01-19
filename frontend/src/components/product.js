@@ -1,9 +1,9 @@
 import React from 'react';
-import Item from './item.js';
+import MainPic from './mainPic.js';
 
 const Product = (props) => (
   <div className="product">
-    {props.lego.map((lego) => <ul><Item lego={lego}/></ul>)}
+    <MainPic lego={props.lego} pictures={props.pictures} />
   </div>
 );
 

@@ -7,11 +7,22 @@ class App extends React.Component {
     super(props);
     this.state = {
       legos: [],
+      pictures: [],
     };
   }
 
   componentDidMount() {
-    this.getAllLegos();
+    this.getDucatiLego();
+  }
+
+  getDucatiLego() {
+    Axios.get('/legos/ducati')
+      .then((results) => {
+        this.setState({
+          legos: results.data,
+          pictures: results.data.pictures,
+        });
+      });
   }
 
   getAllLegos() {
@@ -27,7 +38,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Lego Project</h1>
-        <Product lego={this.state.legos} />
+        <Product lego={this.state.legos} pictures={this.state.pictures} />
       </div>
     );
   }

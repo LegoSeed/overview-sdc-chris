@@ -20,6 +20,16 @@ app.get('/legos', (req, res) => {
   });
 });
 
+app.get('/legos/ducati', (req, res) => {
+  db.getDucatiLego((err, result) => {
+    if (err) {
+      res.status(404).send(err);
+    } else {
+      res.status(200).send(result);
+    }
+  });
+});
+
 app.post('/legos', (req, res) => {
   res.send('Hello from the LEGO server!');
 });
