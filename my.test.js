@@ -1,21 +1,8 @@
-// import React from 'react';
-// import Enzyme from 'enzyme';
-// import { configure } from 'enzyme';
-// import { shallow, mount, render } from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
 const supertest = require('supertest');
 const app = require('./backend/server/server');
 
 const request = supertest(app);
-// const databaseName = 'legos';
 
-// beforeAll(async () => {
-//   const url = `mongodb://localhost/${databaseName}`;
-//   await mongoose.disconnect();
-//   await mongoose.connect(url, { useNewUrlParser: true });
-// });
-
-// afterAll(() => mongoose.disconnect());
 test('adds 1 + 2 to equal 3', () => {
   expect(1 + 2).toBe(3);
 });
@@ -40,3 +27,18 @@ describe('Connection Tests', () => {
     done();
   });
 });
+
+// import React from 'react';
+// import Enzyme from 'enzyme';
+// import { configure } from 'enzyme';
+// import { shallow, mount, render } from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
+// const databaseName = 'legos';
+
+// beforeAll(async () => {
+//   const url = `mongodb://localhost/${databaseName}`;
+//   await mongoose.disconnect();
+//   await mongoose.connect(url, { useNewUrlParser: true });
+// });
+
+// afterAll(() => mongoose.disconnect());
