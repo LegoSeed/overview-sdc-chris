@@ -1,7 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import Images from './images';
-
 // const bootstrap = require('bootstrap');
 
 class MainPic extends React.Component {
@@ -17,8 +16,7 @@ class MainPic extends React.Component {
     // const myCarousel = document.querySelector('carousel slide');
     // const carousel = new bootstrap.Carousel(myCarousel);
     return (
-      <Carousel>
-        <div>
+    // <Carousel>
           <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               {this.props.pictures.map((pic, index) => {
@@ -33,8 +31,7 @@ class MainPic extends React.Component {
               <span className="visually-hidden" />
             </a>
           </div>
-        </div>
-      </Carousel>
+    // </Carousel>
     );
   }
 }
