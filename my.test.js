@@ -3,27 +3,40 @@
 // import { configure } from 'enzyme';
 // import { shallow, mount, render } from 'enzyme';
 // import Adapter from 'enzyme-adapter-react-16';
+const supertest = require('supertest');
+const app = require('./backend/server/server');
 
-// // const wrapper = shallow(<Foo />);
+const request = supertest(app);
+// const databaseName = 'legos';
 
-// configure({ adapter: new Adapter() });
+// beforeAll(async () => {
+//   const url = `mongodb://localhost/${databaseName}`;
+//   await mongoose.disconnect();
+//   await mongoose.connect(url, { useNewUrlParser: true });
+// });
 
+// afterAll(() => mongoose.disconnect());
 test('adds 1 + 2 to equal 3', () => {
   expect(1 + 2).toBe(3);
 });
 
-// example of a STATIC RENDER MARKUP
+describe('Connection Tests', () => {
+  it('Should return status code 200', async (done) => {
+    const res = await request.get('/');
+    expect(res.status).toBe(200);
+    done();
+  });
 
-// import Foo from './Foo';
+  it('Request body should not return null', async (done) => {
+    const res = await request.get('/legos');
+    expect(res.body).not.toBe(null);
+    done();
+  });
 
-// describe('<Foo />', () => {
-//   it('renders three `.foo-bar`s', () => {
-//     const wrapper = render(<Foo />);
-//     expect(wrapper.find('.foo-bar')).to.have.lengthOf(3);
-//   });
-
-//   it('renders the title', () => {
-//     const wrapper = render(<Foo title="unique" />);
-//     expect(wrapper.text()).to.contain('unique');
-//   });
-// });
+  it('Request should return an array of objects', async (done) => {
+    const res = await request.get('/legos');
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(typeof res.body[0]).toBe('object');
+    done();
+  });
+});

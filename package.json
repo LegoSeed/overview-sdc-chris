@@ -7,11 +7,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon backend/server/server",
+    "start": "nodemon backend/server/start",
     "build": "webpack",
     "seed": "node backend/mongo/seed",
     "watch": "webpack -w",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "Hack Reactor <curriculum.team@hackreactor.com>",
@@ -47,6 +48,7 @@
     "lodash": "^4.17.20",
     "mongodb": "^3.6.3",
     "nodemon": "^2.0.4",
+    "supertest": "^6.1.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   }

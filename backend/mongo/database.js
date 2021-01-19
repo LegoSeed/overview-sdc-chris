@@ -44,13 +44,3 @@ const getAllLegos = (callback) => {
 module.exports = {
   getAllLegos,
 };
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/1",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/2",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/3",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/4",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/5",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/6",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/7",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/8",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/9",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/10"
