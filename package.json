@@ -1,7 +1,8 @@
 {
   "name": "product-overview",
   "jest": {
-    "verbose": true
+    "verbose": true,
+    "testEnvironment": "node"
   },
   "version": "1.0.0",
   "description": "",
@@ -29,9 +30,16 @@
     "lodash": "^4.17.20",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
+    "pure-react-carousel": "^1.27.6",
+    "react": "^16.14.0",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1",
-    "sass": "^1.32.4"
+    "react-image-gallery": "^1.0.8",
+    "react-responsive-carousel": "^3.2.11",
+    "react-star-rating-component": "^1.4.1",
+    "react-star-ratings": "^2.3.0",
+    "sass": "^1.32.4",
+    "style-loader": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",

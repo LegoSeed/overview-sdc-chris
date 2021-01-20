@@ -18,7 +18,7 @@ connection.once('open', () => {
 const legoSchema = new mongoose.Schema({
   brand: String,
   name: String,
-  reviewAvg: Decimal128,
+  reviewAvg: Number,
   price: Number,
   quantity: Number,
   ageRec: Number,
@@ -55,4 +55,5 @@ const getDucatiLego = (callback) => {
 module.exports = {
   getAllLegos,
   getDucatiLego,
+  LegoList,
 };

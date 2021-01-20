@@ -1,45 +1,55 @@
-// import Bootstrap from 'bootstrap';
 import React from 'react';
-
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isClicked: false,
-    };
-  }
-
-  render() {
-    return (
-      <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
-
-          <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
-
-          <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
-        </div>
-
-        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true" />
-          <span className="visually-hidden">Previous</span>
-        </a>
-
-        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true" />
-          <span className="visually-hidden">Next</span>
-        </a>
-
-      </div>
-    );
-  }
+// import ImageGallery from 'react-image-gallery';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import {
+  CarouselProvider, Slider, Slide, ButtonBack, ButtonNext 
 }
+  from 'pure-react-carousel';
 
-export default Carousel;
+import 'pure-react-carousel/dist/react-carousel.es.css';
+// import 'react-image-gallery/styles/css/image-gallery.css';
+
+const CarouselComponent = (props) => (
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+
+  //   };
+  // }
+
+  // render() {
+  //   return (
+  //     <div>
+  //       <CarouselProvider
+  //         naturalSlideWidth={100}
+  //         naturalSlideHeight={125}
+  //       />
+  //       <Slider>
+  // {this.props.pictures.map((pic, index) => <Slide index={index}><img src={pic} alt="..." 
+  // /></Slide>)}
+  //       </Slider>
+  //     </div>
+  //   );
+  // }
+
+  // const settings = {
+  //   showArrows: true,
+  //   showThumbs: true,
+  //   thumbnailPosition: "right",
+  // };
+  // return (
+
+  <div className="carousel-wrapper">
+    <Carousel>
+      {props.pictures.map((url, index) => (
+        <div key={index}>
+          <img src={url} alt="..." />
+          <p>Legend</p>
+        </div>
+      ))}
+    </Carousel>
+  </div>
+);
+
+export default CarouselComponent;

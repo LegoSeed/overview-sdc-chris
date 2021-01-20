@@ -5,6 +5,8 @@ import toJson from 'enzyme-to-json';
 import App from './frontend/src/components/app.js';
 
 const supertest = require('supertest');
+const mongoose = require('mongoose');
+const { LegoList } = require('./backend/mongo/database');
 
 import ReactDOM from 'react-dom';
 
@@ -13,7 +15,34 @@ const application = require('./backend/server/server');
 Enzyme.configure({ adapter: new Adapter() });
 
 const request = supertest(application);
+const databaseName = 'legos';
 
+// beforeAll(async () => {
+//   const url = `mongodb://localhost:27017/${databaseName}`;
+//   await mongoose.connect(url, { useNewUrlParser: true });
+// });
+
+beforeAll(async () => {
+  const url = `mongodb://localhost/${databaseName}`;
+  await mongoose.disconnect();
+  await mongoose.connect(url, { useNewUrlParser: true });
+});
+
+it('Should have ducati lego set in database', async (done) => {
+  const query = LegoList.where({ _id: '5fff721aa2b7e1d4118cca16' });
+  query.findOne((err, response) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(response, '---- response');
+      expect(JSON.stringify(response._id)).toMatch('5fff721aa2b7e1d4118cca16');
+      done();
+    }
+  });
+  // const ducati = await LegoList.findOne({ _id: '5fff721aa2b7e1d4118cca16' });
+  // expect(ducati._id).toBe('5fff721aa2b7e1d4118cca16');
+  // done();
+});
 // it('renders without crashing', () => {
 //   const wrapper = shallow(<App />);
 //   const h1 = wrapper.find('h1');
@@ -34,15 +63,15 @@ test('adds 2 + 3 to equal 3', () => {
 });
 
 describe('Connection Tests', () => {
-  it('Should return status code 200', async (done) => {
+  it('Should return status code 200', () => {
     request.get('/').expect(200);
-    done();
+    // done();
   });
 
   it('Request body should not return null', () => {
     request.get('/legos').expect(200).end((err, response) => {
       expect(response).not.toBe(null);
-      done();
+      // done();
     });
   });
 
@@ -50,11 +79,15 @@ describe('Connection Tests', () => {
     request.get('/legos').end((err, response) => {
       Array.isArray(response.body).toBe(true);
       expect(typeof response.body[0]).toBe('object');
-      done();
+      // done();
     });
   });
 });
 
+// afterAll(async () => {
+//   // Removes the User collection
+//   await mongoose.connection.close();
+// });
 // import React from 'react';
 // import Enzyme from 'enzyme';
 // import { configure } from 'enzyme';

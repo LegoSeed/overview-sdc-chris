@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
-import Product from './product.js';
+import ProductInfo from './productInfo.js';
+import CarouselComponent from "./carousel";
 
 class App extends React.Component {
   constructor(props) {
@@ -38,7 +39,8 @@ class App extends React.Component {
     return (
       <div>
         <h1>Lego Project</h1>
-        <Product lego={this.state.legos} pictures={this.state.pictures} />
+        <CarouselComponent pictures={this.state.pictures} />
+        <ProductInfo lego={this.state.legos} pictures={this.state.pictures} />
       </div>
     );
   }

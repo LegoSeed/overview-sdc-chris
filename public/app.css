@@ -7,6 +7,40 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: pink;
+  background-color: rgb(242, 237, 237);
+  width: 100rem;
 }
 
+.product {
+ background-color: white;
+ width: 100rem;
+}
+
+.brand {
+  font-size: 100px;
+}
+.stars {
+
+}
+
+.reviewCount {
+
+}
+
+.name {
+  font-family: Cera Pro,sans-serif
+
+}
+
+.price {
+
+}
+
+.quantity {
+
+}
+.button {
+}
+.button:hover {
+  background-color: white
+}
