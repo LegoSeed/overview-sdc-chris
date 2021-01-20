@@ -42,7 +42,7 @@ const getAllLegos = (callback) => {
 };
 
 const getDucatiLego = (callback) => {
-  const query = LegoList.where({ name: "Ducati Panigale V4 R" });
+  const query = LegoList.where({ _id: "5fff721aa2b7e1d4118cca16" });
   query.findOne((err, result) => {
     if (err) {
       callback(err, null);

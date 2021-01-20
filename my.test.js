@@ -1,7 +1,33 @@
-const supertest = require('supertest');
-const app = require('./backend/server/server');
+import Adapter from 'enzyme-adapter-react-16';
+import React from 'react';
+import Enzyme, { shallow, render, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
+import App from './frontend/src/components/app.js';
 
-const request = supertest(app);
+const supertest = require('supertest');
+
+import ReactDOM from 'react-dom';
+
+const application = require('./backend/server/server');
+
+Enzyme.configure({ adapter: new Adapter() });
+
+const request = supertest(application);
+
+// it('renders without crashing', () => {
+//   const wrapper = shallow(<App />);
+//   const h1 = wrapper.find('h1');
+//   const result = h1.text();
+//   expect(result).toBe('Lego Project');
+// });
+
+describe('front end testing', () => {
+  it('renders correctly enzyme', (done) => {
+    const wrapper = shallow(<App />);
+    expect(toJson(wrapper)).toMatchSnapshot();
+    done();
+  });
+});
 
 test('adds 2 + 3 to equal 3', () => {
   expect(2 + 3).toBe(5);
@@ -9,22 +35,23 @@ test('adds 2 + 3 to equal 3', () => {
 
 describe('Connection Tests', () => {
   it('Should return status code 200', async (done) => {
-    const res = await request.get('/');
-    expect(res.status).toBe(200);
+    request.get('/').expect(200);
     done();
   });
 
-  it('Request body should not return null', async (done) => {
-    const res = await request.get('/legos');
-    expect(res.body).not.toBe(null);
-    done();
+  it('Request body should not return null', () => {
+    request.get('/legos').expect(200).end((err, response) => {
+      expect(response).not.toBe(null);
+      done();
+    });
   });
 
-  it('Request should return an array of objects', async (done) => {
-    const res = await request.get('/legos');
-    expect(Array.isArray(res.body)).toBe(true);
-    expect(typeof res.body[0]).toBe('object');
-    done();
+  it('Request should return an array of objects', () => {
+    request.get('/legos').end((err, response) => {
+      Array.isArray(response.body).toBe(true);
+      expect(typeof response.body[0]).toBe('object');
+      done();
+    });
   });
 });
 

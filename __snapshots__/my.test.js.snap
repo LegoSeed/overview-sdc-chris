@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`front end testing renders correctly enzyme 1`] = `
+<div>
+  <h1>
+    Lego Project
+  </h1>
+  <Product
+    lego={Array []}
+    pictures={Array []}
+  />
+</div>
+`;

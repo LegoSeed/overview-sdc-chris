@@ -22,13 +22,13 @@
     "axios": "^0.20.0",
     "bootstrap": "^5.0.0-beta1",
     "docker": "^1.0.0",
+    "enzyme-to-json": "^3.6.1",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "jest": "^26.6.3",
     "lodash": "^4.17.20",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
-    "react": "^16.13.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1",
     "sass": "^1.32.4"
@@ -51,6 +51,7 @@
     "lodash": "^4.17.20",
     "mongodb": "^3.6.3",
     "nodemon": "^2.0.4",
+    "react": "^16.14.0",
     "supertest": "^6.1.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
