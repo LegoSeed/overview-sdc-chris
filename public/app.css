@@ -1,63 +1,17 @@
- 
-/* body {
-  margin: 0;
-  padding: 0;
-} */
 
 #app {
-  background-color: rgb(242, 237, 237);
+  background-color: #F7F7F7
 }
 
-/* .product {
- background-color: white;
- display: inline;
-} */
-
-.brand {
-  font-size: 3rem;
-  font-style: oblique
-}
-
-/* .stars {
-
-} */
+.text-center {
+  text-align: center!important;
+  }
 
 .footer{
-  justify-content: center;
   background-color: white;
 }
 .footerColumn {
-  border-right: 1px solid;
-  margin-right: 10rem;
-  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
 }
-
-/* .reviewCount {
-
-} */
-
-
-.available{
-  color: rgb(53, 143, 53);
-}
-
-.name {
-  font-family: Cera Pro,sans-serif;
-  font-weight: 500;
-}
-
-.price {
- font-weight: 800;
- font-family: Cera Pro,sans-serif;
-}
-
-/* .quantity {
-
-} */
-
-
-/* .button {
-}
-.button:hover {
-  background-color: white
-}  */

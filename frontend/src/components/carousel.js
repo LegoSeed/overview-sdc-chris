@@ -1,25 +1,28 @@
 import React from 'react';
-// import ImageGallery from 'react-image-gallery';
+import styled from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-// import {
-//   CarouselProvider, Slider, Slide, ButtonBack, ButtonNext
-// }
-// from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-// import 'react-image-gallery/styles/css/image-gallery.css';
+
+const CarouselContainer = styled.div`
+background-color: #FFFFFF;
+height: 70%;
+width: 100%;
+`;
 
 const CarouselComponent = (props) => (
-  <div className="carousel-wrapper">
-    <Carousel>
+  <CarouselContainer className="carousel-wrapper">
+
+    <Carousel showArrows="true">
       {props.pictures.map((url, index) => (
-        <div key={index}>
+        <div index={index}>
           <img src={url} alt="..." />
           <p>Legend</p>
         </div>
       ))}
     </Carousel>
-  </div>
+
+  </CarouselContainer>
 );
 
 export default CarouselComponent;

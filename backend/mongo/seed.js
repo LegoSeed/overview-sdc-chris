@@ -25,6 +25,33 @@ MongoClient.connect(url, (err, client) => {
   const legoCollection = db.collection('legos');
   // make a bunch of items
   let legos = [];
+  let ducatiPics = [
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/1',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/2',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/3',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/4',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/5',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/6',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/7',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/8',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/9',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/10',
+  ];
+
+  const ducati = {
+    brand: 'TechNic',
+    name: 'Ducati Panigale V4 R',
+    reviewAvg: 51,
+    price: 69.99,
+    quantity: 0,
+    ageRec: 10,
+    pieceCount: 646,
+    vipPoints: 0,
+    pictures: ducatiPics,
+    itemNum: 42107,
+  };
+  legos.push(ducati);
+
   for (let i = 0; i < 100; i += 1) {
     let legoItem = {
       brand: faker.company.companyName(),

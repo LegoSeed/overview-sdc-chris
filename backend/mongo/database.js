@@ -1,4 +1,3 @@
-const { Decimal128 } = require('mongodb');
 const mongoose = require('mongoose');
 // const { array } = require('prop-types');
 // const db = require('./index.js');
@@ -42,7 +41,7 @@ const getAllLegos = (callback) => {
 };
 
 const getDucatiLego = (callback) => {
-  const query = LegoList.where({ _id: "5fff721aa2b7e1d4118cca16" });
+  const query = LegoList.where({ _id: '5fff721aa2b7e1d4118cca16' });
   query.findOne((err, result) => {
     if (err) {
       callback(err, null);

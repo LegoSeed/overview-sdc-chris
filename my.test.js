@@ -1,14 +1,15 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable import/extensions */
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import ReactDOM from 'react-dom';
 import App from './frontend/src/components/app.js';
 
 const supertest = require('supertest');
 const mongoose = require('mongoose');
 const { LegoList } = require('./backend/mongo/database');
-
-import ReactDOM from 'react-dom';
 
 const application = require('./backend/server/server');
 
