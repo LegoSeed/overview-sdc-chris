@@ -4,6 +4,5 @@ build/*
 # dependencies
 /node_modules
 
-
 # ducati buck uri 
 s3://legopics/Ducati/ (from 1 - 10)
