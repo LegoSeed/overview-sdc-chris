@@ -8,32 +8,44 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgb(242, 237, 237);
-  width: 100rem;
 }
 
 .product {
  background-color: white;
- width: 100rem;
+ display: inline;
 }
 
 .brand {
   font-size: 100px;
+  font-style: oblique
 }
 .stars {
 
+}
+.footer{
+  display: flex;
+  flex-direction: column;
 }
 
 .reviewCount {
 
 }
+.available{
+  color: rgb(53, 143, 53);
+  font-size: 1.3rem;
+}
 
 .name {
-  font-family: Cera Pro,sans-serif
-
+  font-family: Cera Pro,sans-serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  width: 100%;
 }
 
 .price {
-
+ font-weight: 800;
+ font-size: 2.6rem;
+ font-family: Cera Pro,sans-serif;
 }
 
 .quantity {

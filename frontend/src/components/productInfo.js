@@ -25,14 +25,18 @@ class ProductInfo extends React.Component {
         <div className="stars reviewCount">
           <StarRatings
             rating={this.props.lego.reviewAvg}
-            starRatedColor="yellow"
+            starRatedColor="gold"
             numberOfStars={5}
           />
           {this.props.lego.reviewTotal} Reviews
         </div>
 
         <div className="price">
-          {this.props.lego.price}
+          ${this.props.lego.price}
+        </div>
+
+        <div style={{ display: (this.props.lego.quantity > 0) ? 'block' : 'none' }} className="available">
+          Available Now
         </div>
 
         <div className="quantity">

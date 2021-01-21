@@ -2,6 +2,8 @@ import React from 'react';
 import Axios from 'axios';
 import ProductInfo from './productInfo.js';
 import CarouselComponent from "./carousel";
+import ProductFooter from './productFooter.js';
+import { Container, Row, Col } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,8 +41,19 @@ class App extends React.Component {
     return (
       <div>
         <h1>Lego Project</h1>
-        <CarouselComponent pictures={this.state.pictures} />
-        <ProductInfo lego={this.state.legos} pictures={this.state.pictures} />
+
+        <Container>
+          <Row>
+            <Col>
+              <CarouselComponent pictures={this.state.pictures} />
+            </Col>
+            <Col>
+              <ProductInfo lego={this.state.legos} pictures={this.state.pictures} />
+            </Col>
+          </Row>
+        </Container>
+
+        <ProductFooter lego={this.state.legos} />
       </div>
     );
   }
