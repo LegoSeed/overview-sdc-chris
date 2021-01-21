@@ -43,10 +43,10 @@ MongoClient.connect(url, (err, client) => {
     name: 'Ducati Panigale V4 R',
     reviewAvg: 51,
     price: 69.99,
-    quantity: 0,
+    quantity: 3,
     ageRec: 10,
     pieceCount: 646,
-    vipPoints: 0,
+    vipPoints: 717,
     pictures: ducatiPics,
     itemNum: 42107,
   };

@@ -22,6 +22,7 @@ class App extends React.Component {
   getDucatiLego() {
     Axios.get('/legos/ducati')
       .then((results) => {
+        console.log(results.data);
         this.setState({
           legos: results.data,
           pictures: results.data.pictures,
