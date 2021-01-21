@@ -73,7 +73,7 @@ class ProductInfo extends React.Component {
         </Row>
 
         <Row>
-          <Stars class="fixed-bottom" className="stars reviewCount">
+          <Stars className="stars reviewCount">
             <StarRatings
               rating={this.props.lego.reviewAvg}
               starRatedColor="gold"

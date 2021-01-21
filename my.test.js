@@ -30,13 +30,13 @@ beforeAll(async () => {
 });
 
 it('Should have ducati lego set in database', async (done) => {
-  const query = LegoList.where({ _id: '5fff721aa2b7e1d4118cca16' });
+  const query = LegoList.where({ name: 'Ducati Panigale V4 R' });
   query.findOne((err, response) => {
     if (err) {
       console.log(err);
     } else {
       console.log(response, '---- response');
-      expect(JSON.stringify(response._id)).toMatch('5fff721aa2b7e1d4118cca16');
+      expect(JSON.stringify(response.name)).toMatch('Ducati Panigale V4 R');
       done();
     }
   });
