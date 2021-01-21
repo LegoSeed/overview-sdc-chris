@@ -1,45 +1,25 @@
-// import Bootstrap from 'bootstrap';
 import React from 'react';
+// import ImageGallery from 'react-image-gallery';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+// import {
+//   CarouselProvider, Slider, Slide, ButtonBack, ButtonNext
+// }
+// from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+// import 'react-image-gallery/styles/css/image-gallery.css';
 
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isClicked: false,
-    };
-  }
-
-  render() {
-    return (
-      <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
-
-          <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
-
-          <div className="carousel-item">
-            <img src="..." className="d-block w-100" alt="..." />
-          </div>
+const CarouselComponent = (props) => (
+  <div className="carousel-wrapper">
+    <Carousel>
+      {props.pictures.map((url, index) => (
+        <div key={index}>
+          <img src={url} alt="..." />
+          <p>Legend</p>
         </div>
+      ))}
+    </Carousel>
+  </div>
+);
 
-        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true" />
-          <span className="visually-hidden">Previous</span>
-        </a>
-
-        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true" />
-          <span className="visually-hidden">Next</span>
-        </a>
-
-      </div>
-    );
-  }
-}
-
-export default Carousel;
+export default CarouselComponent;

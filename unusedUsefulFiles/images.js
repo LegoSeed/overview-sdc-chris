@@ -1,4 +1,5 @@
 import React from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Images = (props) => {
   if (props.index === 0) {
