@@ -41,16 +41,18 @@ const getAllLegos = (callback) => {
   });
 };
 
+const getDucatiLego = (callback) => {
+  const query = LegoList.where({ _id: "5fff721aa2b7e1d4118cca16" });
+  query.findOne((err, result) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, result);
+    }
+  });
+};
+
 module.exports = {
   getAllLegos,
+  getDucatiLego,
 };
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/1",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/2",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/3",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/4",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/5",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/6",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/7",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/8",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/9",
-// "https://legopics.s3.us-east-2.amazonaws.com/Ducati/10"
