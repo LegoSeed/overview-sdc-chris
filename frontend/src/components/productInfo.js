@@ -27,6 +27,8 @@ class ProductInfo extends React.Component {
             rating={this.props.lego.reviewAvg}
             starRatedColor="gold"
             numberOfStars={5}
+            starDimension="2rem"
+            starSpacing="5px"
           />
           {this.props.lego.reviewTotal} Reviews
         </div>
