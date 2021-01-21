@@ -4,12 +4,9 @@
   padding: 0;
 } */
 
-/* #app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#app {
   background-color: rgb(242, 237, 237);
-} */
+}
 
 /* .product {
  background-color: white;
@@ -25,10 +22,15 @@
 
 } */
 
-/* .footer{
-  display: flex;
-  flex-direction: column;
-} */
+.footer{
+  justify-content: center;
+  background-color: white;
+}
+.footerColumn {
+  border-right: 1px solid;
+  margin-right: 10rem;
+  align-items: center;
+}
 
 /* .reviewCount {
 

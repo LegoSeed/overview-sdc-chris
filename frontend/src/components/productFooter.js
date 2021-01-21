@@ -3,19 +3,20 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const ProductFooter = (props) => (
-  <div>
+  <div className="footer">
     <Container>
       <Row>
-        <Col>
+        <Col className="footerColumn">
           {props.lego.ageRec}
         </Col>
-        <Col>
+        <Col className="footerColumn">
           {props.lego.pieceCount}
         </Col>
-        <Col>
+        <Col className="footerColumn">
           {props.lego.vipPoints}
         </Col>
         <Col>
+          &#35;
           {props.lego.itemNum}
         </Col>
       </Row>
