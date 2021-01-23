@@ -1,14 +1,12 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import styled from 'styled-components';
+import Styled from 'styled-components';
 import { Container, Row, Col } from 'react-bootstrap';
 
-const FooterContainer = styled.div`
+const FooterContainer = Styled.div`
 line-height: 3.125rem;
-text-align: center;
-justify-conter: center;
-align-items: center;
+background-color: white;
 `;
 
 const ProductFooter = (props) => (

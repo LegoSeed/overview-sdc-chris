@@ -41,7 +41,8 @@ MongoClient.connect(url, (err, client) => {
   const ducati = {
     brand: 'TechNic',
     name: 'Ducati Panigale V4 R',
-    reviewAvg: 51,
+    reviewAvg: 4.4,
+    reviewTotal: 51,
     price: 69.99,
     quantity: 3,
     ageRec: 10,

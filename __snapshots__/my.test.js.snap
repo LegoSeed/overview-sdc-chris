@@ -5,9 +5,33 @@ exports[`front end testing renders correctly enzyme 1`] = `
   <h1>
     Lego Project
   </h1>
-  <Product
+  <Container
+    fluid={false}
+  >
+    <Row
+      noGutters={false}
+    >
+      <Col
+        className="carouselComponent"
+        xs={8}
+      >
+        <CarouselComponent
+          pictures={Array []}
+        />
+      </Col>
+      <Col
+        class="col-md-auto"
+        className="productInfo"
+      >
+        <ProductInfo
+          lego={Array []}
+          pictures={Array []}
+        />
+      </Col>
+    </Row>
+  </Container>
+  <ProductFooter
     lego={Array []}
-    pictures={Array []}
   />
 </div>
 `;

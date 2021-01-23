@@ -2,9 +2,14 @@
 import React from 'react';
 import Axios from 'axios';
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductInfo from './productInfo.js';
+import Styled from 'styled-components';
+import ProductInfo from './productInfo';
 import CarouselComponent from './carousel';
-import ProductFooter from './productFooter.js';
+import ProductFooter from './productFooter';
+
+const AppComponent = Styled.div`
+ background-color: #F7F7F7
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -20,9 +25,8 @@ class App extends React.Component {
   }
 
   getDucatiLego() {
-    Axios.get('/legos/ducati')
+    Axios.get('http://localhost:3003/legos/ducati')
       .then((results) => {
-        console.log(results.data);
         this.setState({
           legos: results.data,
           pictures: results.data.pictures,
@@ -31,7 +35,7 @@ class App extends React.Component {
   }
 
   getAllLegos() {
-    Axios.get('/legos')
+    Axios.get('http://localhost:3003/legos')
       .then((results) => {
         this.setState({
           legos: results.data,
@@ -41,7 +45,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <AppComponent>
         <h1>Lego Project</h1>
 
         <Container>
@@ -49,14 +53,14 @@ class App extends React.Component {
             <Col xs={8} className="carouselComponent">
               <CarouselComponent pictures={this.state.pictures} />
             </Col>
-            <Col class="col-md-auto" className="productInfo">
+            <Col class="col-lg-auto" className="productInfo">
               <ProductInfo lego={this.state.legos} pictures={this.state.pictures} />
             </Col>
           </Row>
         </Container>
 
         <ProductFooter lego={this.state.legos} />
-      </div>
+      </AppComponent>
     );
   }
 }
