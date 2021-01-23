@@ -1,12 +1,14 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import styled from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+// import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const CarouselContainer = styled.div`
 background-color: #FFFFFF;
-height: 70%;
+height: 60%;
 width: 100%;
 `;
 

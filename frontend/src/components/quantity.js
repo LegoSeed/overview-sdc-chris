@@ -46,15 +46,27 @@ class Quantity extends React.Component {
   }
 
   increment() {
-    this.setState({
-      count: this.state.count + 1,
-    });
+    if (this.state.count === 0) {
+      this.setState({
+        count: 0,
+      });
+    } else {
+      this.setState({
+        count: this.state.count - 1,
+      });
+    }
   }
 
   decrement() {
-    this.setState({
-      count: this.state.count - 1,
-    });
+    if (this.state.count === 3) {
+      this.setState({
+        count: 3,
+      });
+    } else {
+      this.setState({
+        count: this.state.count + 1,
+      });
+    }
   }
 
   render() {
@@ -68,6 +80,7 @@ class Quantity extends React.Component {
               <div>
                 <Button2 onClick={this.decrement}>+</Button2>
               </div>
+              limit 3
             </div>
           </div>
         </StyledCounter>

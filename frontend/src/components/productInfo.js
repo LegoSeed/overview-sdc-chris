@@ -2,31 +2,31 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import StarRatings from 'react-star-ratings';
-import styled from 'styled-components';
+import Styled from 'styled-components';
 import { Row } from 'react-bootstrap';
 import Quantity from './quantity';
 
-const ProductInfoContainer = styled.div`
+const ProductInfoContainer = Styled.div`
 background-color: #FFFFFF;
 height: 95%;
-width: 85%;
+width: 80%;
 `;
 
-const Brand = styled.div`
-textTransform: uppercase;
+const Brand = Styled.div`
+text-transform: uppercase;
 font-style: oblique;
 font-size: 3rem;
 `;
-const Name = styled.div`
+const Name = Styled.div`
 font-size: 20px;
 font-weight: 600;
 font-family: Cera Pro,sans-serif;
 `;
-const Available = styled.div`
+const Available = Styled.div`
 margin-bottom: 15px;
 color: rgb(53, 143, 53);
 `;
-const Stars = styled.div`
+const Stars = Styled.div`
 line-height: 2;
 align-self: center;
 font-size: 0.5rem;
@@ -37,15 +37,15 @@ color: blue;
 text-decoration: underline;
 `;
 
-const Price = styled.div`
+const Price = Styled.div`
 font-weight: 800;
  font-family: Cera Pro,sans-serif;
 
 `;
-const QuantityComponent = styled.div`
+const QuantityComponent = Styled.div`
 
 `;
-const AddToBag = styled.button`
+const AddToBag = Styled.button`
 
 `;
 class ProductInfo extends React.Component {

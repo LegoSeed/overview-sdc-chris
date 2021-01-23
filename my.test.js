@@ -5,7 +5,10 @@ import React from 'react';
 import Enzyme, { shallow, render, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+import { Carousel } from 'react-responsive-carousel';
 import App from './frontend/src/components/app.js';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const supertest = require('supertest');
 const mongoose = require('mongoose');
@@ -33,9 +36,8 @@ it('Should have ducati lego set in database', async (done) => {
   const query = LegoList.where({ name: 'Ducati Panigale V4 R' });
   query.findOne((err, response) => {
     if (err) {
-      console.log(err);
+      console.log('err');
     } else {
-      console.log(response, '---- response');
       expect(JSON.stringify(response.name)).toMatch('Ducati Panigale V4 R');
       done();
     }
@@ -57,10 +59,6 @@ describe('front end testing', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
     done();
   });
-});
-
-test('adds 2 + 3 to equal 3', () => {
-  expect(2 + 3).toBe(5);
 });
 
 describe('Connection Tests', () => {
