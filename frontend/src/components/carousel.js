@@ -17,7 +17,7 @@ const CarouselComponent = (props) => (
 
     <Carousel showArrows="true">
       {props.pictures.map((url, index) => (
-        <div index={index}>
+        <div key={index}>
           <img src={url} alt="..." />
           <p>Legend</p>
         </div>

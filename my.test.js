@@ -2,12 +2,12 @@
 /* eslint-disable import/extensions */
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
-import Enzyme, { shallow, render, mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import ReactDOM from 'react-dom';
-import styled from 'styled-components';
-import { Carousel } from 'react-responsive-carousel';
+import Enzyme, { shallow } from 'enzyme';
 import App from './frontend/src/components/app.js';
+import Carousel from './frontend/src/components/carousel.js';
+import ProductFooter from './frontend/src/components/productFooter.js';
+import ProductInfo from './frontend/src/components/productInfo.js';
+import Quantity from './frontend/src/components/quantity.js';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const supertest = require('supertest');
@@ -21,11 +21,7 @@ Enzyme.configure({ adapter: new Adapter() });
 const request = supertest(application);
 const databaseName = 'legos';
 
-// beforeAll(async () => {
-//   const url = `mongodb://localhost:27017/${databaseName}`;
-//   await mongoose.connect(url, { useNewUrlParser: true });
-// });
-
+/*  *********************** DATABASE TESTING ************************ */
 beforeAll(async () => {
   const url = `mongodb://localhost/${databaseName}`;
   await mongoose.disconnect();
@@ -42,62 +38,93 @@ it('Should have ducati lego set in database', async (done) => {
       done();
     }
   });
-  // const ducati = await LegoList.findOne({ _id: '5fff721aa2b7e1d4118cca16' });
-  // expect(ducati._id).toBe('5fff721aa2b7e1d4118cca16');
-  // done();
 });
-// it('renders without crashing', () => {
-//   const wrapper = shallow(<App />);
-//   const h1 = wrapper.find('h1');
-//   const result = h1.text();
-//   expect(result).toBe('Lego Project');
-// });
 
+/*  ********************** FRONT END TESTING ************************ */
 describe('front end testing', () => {
-  it('renders correctly enzyme', (done) => {
-    const wrapper = shallow(<App />);
-    expect(toJson(wrapper)).toMatchSnapshot();
+  it('App correctly renders', async (done) => {
+    const wrapper = await shallow(<App />);
+    expect(wrapper.exists()).toBe(true);
+    done();
+  });
+
+  it('Carousel correctly renders', async (done) => {
+    const pics = [
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/1',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/2',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/3',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/4',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/5',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/6',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/7',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/8',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/9',
+      'https://legopics.s3.us-east-2.amazonaws.com/Ducati/10',
+    ];
+    const wrapper = await shallow(<Carousel pictures={pics} />);
+    expect(wrapper.exists()).toBe(true);
+    done();
+  });
+  it('ProductFooter correctly renders', async (done) => {
+    const lego = {
+      ageRec: 10,
+      pieceCount: 100,
+      vipPoints: 250,
+      itemNum: 22132,
+    };
+    const wrapper = await shallow(
+      <ProductFooter lego={lego} />,
+    );
+    expect(wrapper.exists()).toBe(true);
+    done();
+  });
+  it('ProductInfo info correctly renders', async (done) => {
+    const lego = {
+      brand: 'lego',
+      name: 'ducati',
+      reviewAvg: 4.4,
+      reviewTotal: 56,
+      price: 69.99,
+      quantity: 3,
+    };
+    const wrapper = await shallow(<ProductInfo lego={lego} />);
+    expect(wrapper.exists()).toBe(true);
+    done();
+  });
+
+  it('Quantity correctly renders', async (done) => {
+    const wrapper = await shallow(<Quantity />);
+    expect(wrapper.exists()).toBe(true);
     done();
   });
 });
 
+/*  *********************** CONNECTION TESTING ******************** */
 describe('Connection Tests', () => {
-  it('Should return status code 200', () => {
+  it('Should return status code 200', async (done) => {
     request.get('/').expect(200);
-    // done();
+    done();
   });
 
-  it('Request body should not return null', () => {
+  it('Request body should not return null', async (done) => {
     request.get('/legos').expect(200).end((err, response) => {
       expect(response).not.toBe(null);
-      // done();
+      done();
     });
   });
 
-  it('Request should return an array of objects', () => {
+  it('Request should return an array of objects', async (done) => {
     request.get('/legos').end((err, response) => {
-      Array.isArray(response.body).toBe(true);
+      const isTrue = Array.isArray(response.body);
+      expect(isTrue).toBe(true);
       expect(typeof response.body[0]).toBe('object');
-      // done();
+      done();
     });
   });
 });
 
-// afterAll(async () => {
-//   // Removes the User collection
-//   await mongoose.connection.close();
-// });
-// import React from 'react';
-// import Enzyme from 'enzyme';
-// import { configure } from 'enzyme';
-// import { shallow, mount, render } from 'enzyme';
-// import Adapter from 'enzyme-adapter-react-16';
-// const databaseName = 'legos';
-
-// beforeAll(async () => {
-//   const url = `mongodb://localhost/${databaseName}`;
-//   await mongoose.disconnect();
-//   await mongoose.connect(url, { useNewUrlParser: true });
-// });
-
-// afterAll(() => mongoose.disconnect());
+afterAll(async (done) => {
+  // Closing the DB connection allows Jest to exit successfully.
+  mongoose.connection.close();
+  done();
+});
