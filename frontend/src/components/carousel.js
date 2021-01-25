@@ -17,6 +17,7 @@ const CarouselComponent = (props) => (
 
     <Carousel showArrows="true">
       {props.pictures.map((url, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <div key={index}>
           <img src={url} alt="..." />
           <p>Legend</p>
