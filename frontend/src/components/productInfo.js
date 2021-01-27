@@ -45,8 +45,23 @@ font-weight: 800;
 const QuantityComponent = Styled.div`
 
 `;
-const AddToBag = Styled.button`
 
+const AddToBag = Styled.button`
+color: black;
+background-color: rgb(253, 128, 36);
+border-color: rgb(253, 128, 36);
+font-family: Cera Pro,sans-serif;
+width: 100%;
+height: 50px;
+border-radius: 5px;
+&:hover {
+  background-color: white;
+  color:black;
+  border-color: rgb(253, 128, 36);
+  font-family: Cera Pro,sans-serif;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
 `;
 class ProductInfo extends React.Component {
   constructor(props) {
