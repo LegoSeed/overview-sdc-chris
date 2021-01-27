@@ -6,7 +6,7 @@ const { MongoClient } = require('mongodb');
 const assert = require('assert');
 // const _ = require('lodash');
 // Connection URL
-const url = 'mongodb://localhost:27017/test/legos';
+const url = 'mongodb://database:27017/legos';
 
 // Database Name
 const dbName = 'legos';
