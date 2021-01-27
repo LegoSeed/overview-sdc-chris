@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/extensions */
 import Adapter from 'enzyme-adapter-react-16';

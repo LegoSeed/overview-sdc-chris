@@ -12,6 +12,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon backend/server/start",
+    "prod" : "node backend/server/start",
     "build": "webpack",
     "seed": "node backend/mongo/seed",
     "watch": "webpack -w",
