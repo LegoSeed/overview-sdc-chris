@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   getDucatiLego() {
-    Axios.get('/legos/ducati')
+    Axios.get('http://localhost:3003/legos/ducati')
       .then((results) => {
         this.setState({
           legos: results.data,
@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   getAllLegos() {
-    Axios.get('/legos')
+    Axios.get('http://localhost:3003/legos')
       .then((results) => {
         this.setState({
           legos: results.data,
