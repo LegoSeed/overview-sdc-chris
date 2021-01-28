@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
@@ -18,18 +20,20 @@ font-style: oblique;
 font-size: 3rem;
 `;
 const Name = Styled.div`
-font-size: 20px;
-font-weight: 600;
-font-family: Cera Pro,sans-serif;
+font-size: 0.875rem;
+font-weight: 500;
+font-family: Arial;
 `;
 const Available = Styled.div`
 margin-bottom: 15px;
+font-size: 0.875rem;
 color: rgb(53, 143, 53);
+font-family: Arial;
 `;
 const Stars = Styled.div`
 line-height: 2;
 align-self: center;
-font-size: 0.5rem;
+font-size: 0.875rem;
 float: left;
 align-self: left;
 margin-bottom: 120px;
@@ -67,7 +71,7 @@ class ProductInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      heartColor: 'white',
     };
   }
 
@@ -99,7 +103,7 @@ class ProductInfo extends React.Component {
             <span>
               {this.props.lego.reviewTotal}
               {'  '}
-              Reviews
+              <a href="https://www.amazon.com/review/R2JGNJ5ZPJT4YC">Reviews</a>
             </span>
           </Stars>
 
@@ -130,6 +134,38 @@ class ProductInfo extends React.Component {
         <Row>
           <div>
             <AddToBag className="button" type="button">Add to Bag</AddToBag>
+          </div>
+          <div>
+            <span id="heart">
+              ❤️ Add to wishlist
+            </span>
+          </div>
+        </Row>
+
+        <Row>
+          <div class="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Check Store Stock
+                </button>
+              </h2>
+              <div class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <span style={{ 'font-size': '0.875rem' }}>
+                    Enter your address to find a LEGO® Store near you. Please call to ensure item availability and inquire about the possibility for curbside pick-up.
+                  </span>
+                  <div class="input-group col-md-4">
+                    <input class="form-control py-2" type="search" placeholder="Enter a city and state and zip code" id="example-search-input" />
+                    <span class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </Row>
 

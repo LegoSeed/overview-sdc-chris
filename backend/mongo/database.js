@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 // const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://database:27017/legos', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://database:27017/legos', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/legos', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('useFindAndModify', false);
 
 const { connection } = mongoose;

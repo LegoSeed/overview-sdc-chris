@@ -6,6 +6,7 @@ import Styled from 'styled-components';
 import ProductInfo from './productInfo';
 import CarouselComponent from './carousel';
 import ProductFooter from './productFooter';
+import Header from './header';
 
 const AppComponent = Styled.div`
  background-color: #F7F7F7
@@ -25,7 +26,8 @@ class App extends React.Component {
   }
 
   getDucatiLego() {
-    Axios.get('http://3.141.14.195:3003/legos/ducati')
+    // Axios.get('http://3.141.14.195:3003/legos/ducati')
+    Axios.get('http://localhost:3003/legos/ducati')
       .then((results) => {
         this.setState({
           legos: results.data,
@@ -35,7 +37,8 @@ class App extends React.Component {
   }
 
   getAllLegos() {
-    Axios.get('http://3.141.14.195:3003/legos')
+    // Axios.get('http://3.141.14.195:3003/legos')
+    Axios.get('http://localhost:3003/legos/ducati')
       .then((results) => {
         this.setState({
           legos: results.data,
@@ -46,7 +49,10 @@ class App extends React.Component {
   render() {
     return (
       <AppComponent>
-        <h1>Lego Project</h1>
+
+        <Row>
+          <Header />
+        </Row>
 
         <Container>
           <Row>
