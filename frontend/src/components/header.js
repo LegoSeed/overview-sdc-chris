@@ -9,10 +9,6 @@ import React from 'react';
 import { NavDropdown } from 'react-bootstrap';
 import Styled from 'styled-components';
 
-const Lego = Styled.a`
-font-weight: 500;
-`;
-
 const OfferAndSales = Styled.li`
 align-items: center;
 `;
@@ -22,7 +18,7 @@ const Header = (props) => (
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
       <div class="container-fluid">
 
-        <Lego class="navbar-brand" href="https://www.lego.com/en-us">LEGO®</Lego>
+        <a class="navbar-brand" style={{ 'font-weight': 'bolder' }} href="https://www.lego.com/en-us">LEGO®</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

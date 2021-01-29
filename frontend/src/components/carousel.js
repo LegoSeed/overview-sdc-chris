@@ -13,7 +13,7 @@ width: 100%;
 `;
 
 const CarouselComponent = (props) => (
-  <CarouselContainer className="carousel-wrapper">
+  <CarouselContainer class="d-flex" className="carousel-wrapper">
 
     <Carousel showArrows="true">
       {props.pictures.map((url, index) => (
