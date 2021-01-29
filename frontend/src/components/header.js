@@ -50,12 +50,8 @@ const Header = (props) => (
               <NavDropdown.Item href="#action/3.4">Another Interest</NavDropdown.Item>
             </NavDropdown>
 
-            <OfferAndSales class="nav-item d-sm-flex">
-              <a class="nav-link active" aria-current="page">
-                <div>OFFERS</div>
-                <div>&</div>
-                <div>SALES</div>
-              </a>
+            <OfferAndSales class="nav-item">
+              <a class="nav-link active d-flex" aria-current="page">OFFERS & SALES</a>
             </OfferAndSales>
 
             <li class="nav-item">
