@@ -10,7 +10,7 @@ import { NavDropdown } from 'react-bootstrap';
 import Styled from 'styled-components';
 
 const OfferAndSales = Styled.li`
-align-items: center;
+
 `;
 
 const Header = (props) => (
@@ -18,7 +18,7 @@ const Header = (props) => (
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
       <div class="container-fluid">
 
-        <a class="navbar-brand" style={{ 'font-weight': 'bolder' }} href="https://www.lego.com/en-us">LEGO®</a>
+        <a class="navbar-brand" style={{ 'font-weight': '600' }} href="https://www.lego.com/en-us">LEGO®</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -50,8 +50,12 @@ const Header = (props) => (
               <NavDropdown.Item href="#action/3.4">Another Interest</NavDropdown.Item>
             </NavDropdown>
 
-            <OfferAndSales class="nav-item">
-              <a class="nav-link active" aria-current="page">OFFERS & SALES</a>
+            <OfferAndSales class="nav-item d-sm-flex">
+              <a class="nav-link active" aria-current="page">
+                <div>OFFERS</div>
+                <div>&</div>
+                <div>SALES</div>
+              </a>
             </OfferAndSales>
 
             <li class="nav-item">
