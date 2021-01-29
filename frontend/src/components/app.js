@@ -30,8 +30,8 @@ class App extends React.Component {
   }
 
   getDucatiLego() {
-    Axios.get('http://3.141.14.195:3003/legos/ducati')
-    // Axios.get('http://localhost:3003/legos/ducati')
+    // Axios.get('http://3.141.14.195:3003/legos/ducati')
+    Axios.get('http://localhost:3003/legos/ducati')
       .then((results) => {
         this.setState({
           legos: results.data,
@@ -69,7 +69,7 @@ class App extends React.Component {
             <Col xs={8} className="carouselComponent">
               <CarouselComponent pictures={this.state.pictures} />
             </Col>
-            <Col class="col-lg-auto" className="productInfo">
+            <Col class="d-md-flex" className="productInfo">
               <ProductInfo addToBag={this.addToBag} lego={this.state.legos} pictures={this.state.pictures} bagCount={this.state.bagCount} />
             </Col>
           </Row>

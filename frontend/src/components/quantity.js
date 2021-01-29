@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/no-access-state-in-setstate */
 import React from 'react';
@@ -8,16 +9,15 @@ const StyledCounter = styled.div`
 
 `;
 const Paragraph = styled.p`
+ width: 20%;
  float:left;
  display: inline;
- width: 10%;
- align-items: center;
+ text-align: center;
  justify-content: center;
- background-color: white;
+ background-color: #F7F7F7;
  line-height: 3;
 `;
 const Button1 = styled.div`
-width: 20%;
 float:left;
 display: inline;
 background-color: white;
@@ -27,7 +27,6 @@ border: 0px 2px 0 0 dark gray;
   cursor: pointer;
 `;
 const Button2 = styled.div`
-width: 20%;
 float:left;
 display: inline;
 border-radius: 4px; 
@@ -37,6 +36,7 @@ border: 2px dark black;
   cursor: pointer;
 `;
 const Text = styled.span`
+margin-left: 15px;
 float: center;
 font-size: 0.875rem;
 font-family: Arial;
@@ -89,7 +89,7 @@ class Quantity extends React.Component {
         <StyledCounter>
           <div>
             <Button1>
-              <Button variant="outline-secondary" size="lg" onClick={this.decrement}>-</Button>
+              <Button variant="outline-secondary" size="lg" block onClick={this.decrement}>-</Button>
             </Button1>
             <div>
               <Paragraph>{this.state.count}</Paragraph>

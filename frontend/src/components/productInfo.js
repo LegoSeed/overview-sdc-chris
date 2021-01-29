@@ -1,3 +1,8 @@
+/* eslint-disable react/jsx-max-props-per-line */
+/* eslint-disable react/jsx-closing-bracket-location */
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-first-prop-new-line */
+/* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-console */
@@ -25,24 +30,29 @@ import Quantity from './quantity';
 const ProductInfoContainer = Styled.div`
 background-color: #FFFFFF;
 height: 95%;
-width: 80%;
 `;
 
 const Brand = Styled.div`
+margin-left: 5px;
 color: white;
+width: auto;
 text-shadow: rgb(0, 0, 0) 4px 0px 0px, rgb(0, 0, 0) 3.875px 0.984375px 0px, rgb(0, 0, 0) 3.5px 1.90625px 0px, rgb(0, 0, 0) 2.921875px 2.71875px 0px, rgb(0, 0, 0) 2.15625px 3.359375px 0px, rgb(0, 0, 0) 1.25px 3.78125px 0px, rgb(0, 0, 0) 0.28125px 3.984375px 0px, rgb(0, 0, 0) -0.703125px 3.921875px 0px, rgb(0, 0, 0) -1.65625px 3.625px 0px, rgb(0, 0, 0) -2.5px 3.109375px 0px, rgb(0, 0, 0) -3.203125px 2.390625px 0px, rgb(0, 0, 0) -3.6875px 1.515625px 0px, rgb(0, 0, 0) -3.953125px 0.5625px 0px, rgb(0, 0, 0) -3.96875px -0.421875px 0px, rgb(0, 0, 0) -3.734375px -1.390625px 0px, rgb(0, 0, 0) -3.28125px -2.28125px 0px, rgb(0, 0, 0) -2.609375px -3.015625px 0px, rgb(0, 0, 0) -1.78125px -3.578125px 0px, rgb(0, 0, 0) -0.828125px -3.90625px 0px, rgb(0, 0, 0) 0.140625px -3.984375px 0px, rgb(0, 0, 0) 1.125px -3.828125px 0px, rgb(0, 0, 0) 2.046875px -3.421875px 0px, rgb(0, 0, 0) 2.828125px -2.8125px 0px, rgb(0, 0, 0) 3.4375px -2.03125px 0px, rgb(0, 0, 0) 3.828125px -1.109375px 0px, rgb(0, 0, 0) 3.984375px -0.125px 0px;
 text-transform: uppercase;
 font-style: oblique;
-font-size: 3.333rem;
-letter-spacing: 11px;
+font-size: 3.133rem;
+letter-spacing: 10px;
+display: inline-block;
 `;
 const Name = Styled.div`
-font-size: 1.75rem;
+margin-left: 5px;
+font-size: 1.65rem;
 font-weight: 600;
 letter-spacing: 1px;
 font-family: Arial;
+width: 90%
 `;
 const Available = Styled.div`
+margin-left: 10px;
 margin-bottom: 15px;
 font-size: 0.875rem;
 font-family: Arial;
@@ -56,7 +66,7 @@ float: left;
 align-self: left;
 margin-top: 20px;
 margin-left: 5px;
-margin-bottom: 120px;
+margin-bottom: 140px;
 color: blue;
 text-decoration: underline;
 `;
@@ -66,6 +76,7 @@ margin-left: 15px;
 `;
 
 const Price = Styled.div`
+margin-left: 10px;
 font-weight: 800;
 font-size: 2rem;
  font-family: Cera Pro,sans-serif;
@@ -80,6 +91,13 @@ margin-left: 10px;
 `;
 const QuantityComponent = Styled.div`
 margin-top: 15px;
+`;
+
+const ShopMoreLikeThis = Styled.div`
+margin-top: 20px;
+margin-left: 10px;
+padding-bottom: 50px;
+margin-bottom: 15px;
 `;
 
 const AddToBag = Styled.button`
@@ -131,7 +149,7 @@ class ProductInfo extends React.Component {
 
   render() {
     return (
-      <ProductInfoContainer class="flex-fill" className="product">
+      <ProductInfoContainer class="d-md-flex" className="product">
 
         <Row>
           <Brand className="brand">
@@ -233,7 +251,7 @@ class ProductInfo extends React.Component {
                     Enter your address to find a LEGO® Store near you. Please call to ensure item availability and inquire about the possibility for curbside pick-up.
                     {'\n'}
 
-                    <Form inline>
+                    <Form inline style={{ 'margin-top': '10px' }}>
                       <InputGroup>
                         <FormControl
                           style={{ 'font-size': '0.875rem' }}
@@ -244,14 +262,22 @@ class ProductInfo extends React.Component {
                         </InputGroup.Append>
                       </InputGroup>
                     </Form>
-
                   </Card.Body>
-
                 </Accordion.Collapse>
               </Card>
-
             </Accordion>
           </AccordianComponent>
+        </Row>
+
+        <Row class="d-flex">
+          <ShopMoreLikeThis>
+            <div>
+              <span>Shop more like this:</span>
+            </div>
+            <div>
+              <span style={{ color: '#006db7', 'font-weight': 'bold', 'font-size': '0.775rem' }}>Adults Welcome ~ Technic™ ~ Vehicles</span>
+            </div>
+          </ShopMoreLikeThis>
         </Row>
 
       </ProductInfoContainer>

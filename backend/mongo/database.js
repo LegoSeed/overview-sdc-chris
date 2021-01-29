@@ -1,10 +1,12 @@
+/* eslint-disable no-console */
+/* eslint-disable array-callback-return */
 const mongoose = require('mongoose');
 // const { array } = require('prop-types');
 // const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://database:27017/legos', { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.connect('mongodb://localhost:27017/legos', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://database:27017/legos', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/legos', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('useFindAndModify', false);
 
 const { connection } = mongoose;
