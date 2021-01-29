@@ -1,3 +1,4 @@
+const compression = require('compression');
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -6,6 +7,7 @@ const db = require('../mongo/database.js');
 const app = express();
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(cors());
+app.use(compression());
 // app.use(express.static('/Users/jd/HackReactor/Product-Overview/public'));
 app.get('/test', (req, res) => {
   res.sendStatus(200);
