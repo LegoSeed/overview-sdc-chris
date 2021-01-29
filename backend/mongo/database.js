@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable array-callback-return */
 const mongoose = require('mongoose');
 // const { array } = require('prop-types');
 // const db = require('./index.js');

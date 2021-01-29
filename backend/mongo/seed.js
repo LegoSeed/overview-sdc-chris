@@ -61,7 +61,6 @@ MongoClient.connect(url, (err, client) => {
   legos.push(ducati);
 
   for (let i = 0; i < 100; i += 1) {
-  
     let legoItem = {
       brand: faker.company.companyName(),
       name: faker.commerce.productName(),
