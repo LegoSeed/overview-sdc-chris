@@ -15,7 +15,6 @@ const Paragraph = styled.p`
  justify-content: center;
  background-color: white;
  line-height: 3;
-
 `;
 const Button1 = styled.div`
 width: 20%;

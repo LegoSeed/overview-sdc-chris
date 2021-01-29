@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable no-console */
 /* mySeedScript.js */
 // require the necessary libraries
@@ -8,8 +9,8 @@ const assert = require('assert');
 // const _ = require('lodash');
 // Connection URL
 
-// const url = 'mongodb://database:27017/legos';
-const url = 'mongodb://localhost:27017/legos';
+const url = 'mongodb://database:27017/legos';
+// const url = 'mongodb://localhost:27017/legos';
 // Database Name
 const dbName = 'legos';
 
@@ -19,7 +20,7 @@ MongoClient.connect(url, (err, client) => {
 
   const db = client.db(dbName);
   // make array of mock images
-  // eslint-disable-next-line prefer-const
+
   let imageCollection = [];
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < 10; i++) {
@@ -28,9 +29,9 @@ MongoClient.connect(url, (err, client) => {
   // get access to the relevant collections
   const legoCollection = db.collection('legos');
   // make a bunch of items
-  // eslint-disable-next-line prefer-const
+
   let legos = [];
-  // eslint-disable-next-line prefer-const
+
   let ducatiPics = [
     'https://legopics.s3.us-east-2.amazonaws.com/Ducati/1',
     'https://legopics.s3.us-east-2.amazonaws.com/Ducati/2',
@@ -60,7 +61,7 @@ MongoClient.connect(url, (err, client) => {
   legos.push(ducati);
 
   for (let i = 0; i < 100; i += 1) {
-    // eslint-disable-next-line prefer-const
+  
     let legoItem = {
       brand: faker.company.companyName(),
       name: faker.commerce.productName(),

@@ -1,10 +1,10 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import styled from 'styled-components';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-// import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const CarouselContainer = styled.div`
 background-color: #FFFFFF;
@@ -17,7 +17,6 @@ const CarouselComponent = (props) => (
 
     <Carousel showArrows="true">
       {props.pictures.map((url, index) => (
-        // eslint-disable-next-line react/no-array-index-key
         <div key={index}>
           <img src={url} alt="..." />
           <p>Legend</p>
