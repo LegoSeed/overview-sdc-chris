@@ -2,7 +2,7 @@
 /* eslint-disable react/no-access-state-in-setstate */
 import React from 'react';
 import styled from 'styled-components';
-import { Col } from 'react-bootstrap';
+import { Col, Button } from 'react-bootstrap';
 
 const StyledCounter = styled.div`
 
@@ -11,22 +11,24 @@ const Paragraph = styled.p`
  float:left;
  display: inline;
  width: 10%;
- text-align: center;
+ align-items: center;
+ justify-content: center;
  background-color: white;
- line-height: 2;
+ line-height: 3;
+
 `;
-const Button1 = styled.button`
-width: 10%;
+const Button1 = styled.div`
+width: 20%;
 float:left;
 display: inline;
 background-color: white;
 border-radius: 4px; 
-border: 0px 2px 0 0 dark black;
+border: 0px 2px 0 0 dark gray;
   color: black;
   cursor: pointer;
 `;
-const Button2 = styled.button`
-width: 10%;
+const Button2 = styled.div`
+width: 20%;
 float:left;
 display: inline;
 border-radius: 4px; 
@@ -34,6 +36,13 @@ background-color: white;
 border: 2px dark black;
   color: black;
   cursor: pointer;
+`;
+const Text = styled.span`
+float: center;
+font-size: 0.875rem;
+font-family: Arial;
+font-weight: bold;
+line-height: 3;
 `;
 class Quantity extends React.Component {
   constructor(props) {
@@ -45,19 +54,13 @@ class Quantity extends React.Component {
     this.decrement = this.decrement.bind(this);
   }
 
-  increment() {
-    if (this.state.count === 0) {
-      this.setState({
-        count: 0,
-      });
-    } else {
-      this.setState({
-        count: this.state.count - 1,
-      });
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.count !== this.state.count) {
+      this.props.getQuantity(this.state.count);
     }
   }
 
-  decrement() {
+  increment() {
     if (this.state.count === 3) {
       this.setState({
         count: 3,
@@ -69,18 +72,34 @@ class Quantity extends React.Component {
     }
   }
 
+  decrement() {
+    if (this.state.count === 0) {
+      this.setState({
+        count: 0,
+      });
+    } else {
+      this.setState({
+        count: this.state.count - 1,
+      });
+    }
+  }
+
   render() {
     return (
       <Col>
         <StyledCounter>
           <div>
-            <Button1 onClick={this.increment}>-</Button1>
+            <Button1>
+              <Button variant="outline-secondary" size="lg" onClick={this.decrement}>-</Button>
+            </Button1>
             <div>
               <Paragraph>{this.state.count}</Paragraph>
               <div>
-                <Button2 onClick={this.decrement}>+</Button2>
+                <Button2>
+                  <Button variant="outline-secondary" size="lg" onClick={this.increment}>+</Button>
+                </Button2>
               </div>
-              limit 3
+              <Text style={{ 'text-align': 'center' }}>limit 3</Text>
             </div>
           </div>
         </StyledCounter>
@@ -90,3 +109,4 @@ class Quantity extends React.Component {
 }
 
 export default Quantity;
+// style={{ 'justify-content': 'center' }}

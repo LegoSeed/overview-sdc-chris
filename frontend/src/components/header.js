@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-unknown-property */
@@ -60,6 +62,12 @@ const Header = (props) => (
             </NavDropdown>
 
           </ul>
+          <div class="nav-item">
+            <a href="#!" class="nav-link navbar-link-2 waves-effect">
+              <span style={{ color: 'black', 'font-weight': 'bolder', 'margin-right': '10px' }}>{props.bagCount}</span>
+              <i class="fas fa-shopping-cart" style={{ 'justify-content': 'center' }}></i>
+            </a>
+          </div>
           <form class="d-flex">
             <div class="input-group rounded">
               <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />

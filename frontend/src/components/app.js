@@ -1,3 +1,5 @@
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import Axios from 'axios';
@@ -18,7 +20,9 @@ class App extends React.Component {
     this.state = {
       legos: [],
       pictures: [],
+      bagCount: 0,
     };
+    this.addToBag = this.addToBag.bind(this);
   }
 
   componentDidMount() {
@@ -46,12 +50,18 @@ class App extends React.Component {
       });
   }
 
+  addToBag(quantity) {
+    this.setState({
+      bagCount: (this.state.bagCount + quantity),
+    });
+  }
+
   render() {
     return (
       <AppComponent>
 
         <Row>
-          <Header />
+          <Header bagCount={this.state.bagCount} />
         </Row>
 
         <Container>
@@ -60,7 +70,7 @@ class App extends React.Component {
               <CarouselComponent pictures={this.state.pictures} />
             </Col>
             <Col class="col-lg-auto" className="productInfo">
-              <ProductInfo lego={this.state.legos} pictures={this.state.pictures} />
+              <ProductInfo addToBag={this.addToBag} lego={this.state.legos} pictures={this.state.pictures} bagCount={this.state.bagCount} />
             </Col>
           </Row>
         </Container>
