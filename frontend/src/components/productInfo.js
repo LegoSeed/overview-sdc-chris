@@ -212,6 +212,7 @@ class ProductInfo extends React.Component {
               <span id="heart">
                 <i
                   class="fas fa-heart"
+                  style={{ color: 'red' }}
                   onClick={() => {
                     console.log('clicked');
                     this.heartWasClicked();
