@@ -251,10 +251,10 @@ class ProductInfo extends React.Component {
                     Enter your address to find a LEGO® Store near you. Please call to ensure item availability and inquire about the possibility for curbside pick-up.
                     {'\n'}
 
-                    <Form inline style={{ 'margin-top': '10px', width: '90%' }}>
+                    <Form inline style={{ 'margin-top': '10px'}}>
                       <InputGroup>
                         <FormControl
-                          style={{ 'font-size': '0.875rem' }}
+                          style={{ 'font-size': '0.875rem', width: '90%' }}
                           placeholder="Enter a city and state or zip code"
                         />
                         <InputGroup.Append>
