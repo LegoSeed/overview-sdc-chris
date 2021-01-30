@@ -12,7 +12,7 @@ background-color: white;
 const ProductFooter = (props) => (
   <FooterContainer className="footer">
 
-    <Container style={{ 'margin-top': '10px', 'margin-bottom': '10px' }}>
+    <Container style={{ 'padding-top': '20px', 'margin-top': '10px', 'margin-bottom': '10px' }}>
 
       <Row>
         <Col class="col-3 text-center" className="footerColumn">

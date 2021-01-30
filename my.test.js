@@ -7,6 +7,7 @@ import Enzyme, { shallow } from 'enzyme';
 import App from './frontend/src/components/app.js';
 import Carousel from './frontend/src/components/carousel.js';
 import ProductFooter from './frontend/src/components/productFooter.js';
+import Header from './frontend/src/components/header';
 import ProductInfo from './frontend/src/components/productInfo.js';
 import Quantity from './frontend/src/components/quantity.js';
 // import server from './backend/server/server';
@@ -51,6 +52,12 @@ it('Should have ducati lego set in database', async (done) => {
 describe('front end testing', () => {
   it('App correctly renders', async (done) => {
     const wrapper = await shallow(<App />);
+    expect(wrapper.exists()).toBe(true);
+    done();
+  });
+
+  it('Header correctly renders', async (done) => {
+    const wrapper = await shallow(<Header />);
     expect(wrapper.exists()).toBe(true);
     done();
   });
