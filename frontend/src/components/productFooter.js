@@ -19,7 +19,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '2rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
@@ -29,7 +29,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '2.3rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
@@ -40,7 +40,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '1rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
@@ -52,7 +52,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '2rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
@@ -62,7 +62,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '2.3rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
@@ -71,7 +71,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '1rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
@@ -84,7 +84,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '2rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
@@ -94,7 +94,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '2.3rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
@@ -104,7 +104,7 @@ const ProductFooter = (props) => (
           <Row style={{
             'font-size': '1rem',
             'justify-content': 'center',
-            'padding-right': '20px',
+            // 'padding-right': '20px',
             'border-right': '1px solid #ccc',
           }}
           >
