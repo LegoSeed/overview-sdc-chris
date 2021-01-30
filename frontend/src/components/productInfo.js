@@ -252,9 +252,9 @@ class ProductInfo extends React.Component {
                     {'\n'}
 
                     <Form inline style={{ 'margin-top': '10px'}}>
-                      <InputGroup>
+                      <InputGroup style={{ width: '90%' }}>
                         <FormControl
-                          style={{ 'font-size': '0.875rem', width: '90%' }}
+                          style={{ 'font-size': '0.875rem' }}
                           placeholder="Enter a city and state or zip code"
                         />
                         <InputGroup.Append>
