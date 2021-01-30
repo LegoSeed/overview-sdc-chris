@@ -138,12 +138,6 @@ describe('Connection Tests', () => {
       });
   });
 
-  //   const res = await request.get('/');
-  //   console.log(res.status);
-  //   expect(res.status).toBe(200);
-  //   done();
-  // });
-
   it('Response body should not return undefined', async (done) => {
     const res = await request.get('/legos');
     expect(res.body).toBeDefined();
@@ -158,9 +152,3 @@ describe('Connection Tests', () => {
     done();
   });
 });
-
-// afterAll(async (done) => {
-//   // Closing the DB connection allows Jest to exit successfully.
-//   mongoose.connection.close();
-//   done();
-// });
