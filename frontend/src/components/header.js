@@ -51,7 +51,7 @@ const Header = (props) => (
             </NavDropdown>
 
             <OfferAndSales class="nav-item">
-              <a class="nav-link active d-flex" aria-current="page">OFFERS & SALES</a>
+              <a class="nav-link active d-flex" aria-current="page" style={{ width: '150px' }}>OFFERS & SALES</a>
             </OfferAndSales>
 
             <li class="nav-item">
