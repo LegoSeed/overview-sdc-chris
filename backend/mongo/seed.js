@@ -23,7 +23,7 @@ MongoClient.connect(url, (err, client) => {
 
   let imageCollection = [];
   // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 13; i++) {
     imageCollection.push(faker.image.imageUrl());
   }
   // get access to the relevant collections
@@ -43,6 +43,9 @@ MongoClient.connect(url, (err, client) => {
     'https://legopics.s3.us-east-2.amazonaws.com/Ducati/8',
     'https://legopics.s3.us-east-2.amazonaws.com/Ducati/9',
     'https://legopics.s3.us-east-2.amazonaws.com/Ducati/10',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/11',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/12',
+    'https://legopics.s3.us-east-2.amazonaws.com/Ducati/13',
   ];
 
   const ducati = {
