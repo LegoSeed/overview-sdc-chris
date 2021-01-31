@@ -10,7 +10,6 @@ import { NavDropdown } from 'react-bootstrap';
 import Styled from 'styled-components';
 
 const OfferAndSales = Styled.li`
-
 `;
 
 const Header = (props) => (
