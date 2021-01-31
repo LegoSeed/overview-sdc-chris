@@ -18,7 +18,9 @@ const Header = (props) => (
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
       <div class="container-fluid">
 
-        <img alt=".." class="navbar-brand" src="https://legopics.s3.us-east-2.amazonaws.com/legoLogo" href="https://www.lego.com/en-us" />
+        <a href="https://www.lego.com/en-us">
+          <img alt=".." class="navbar-brand" src="https://legopics.s3.us-east-2.amazonaws.com/legoLogo" />
+        </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
