@@ -1,11 +1,12 @@
+/* eslint-disable no-console */
 /* eslint-disable max-classes-per-file */
 const faker = require('faker/locale/en_US');
-const ObjectsToCSV = require('objects-to-csv');
+const ObjectsToCsv = require('objects-to-csv');
 
 const randomPicGenerator = (num) => {
   let stringNumber = num.toString();
   stringNumber = stringNumber.padStart(4, '0');
-  const url = `http://sdc-legos.s3.amazonaws.com/images/toy_0${stringNumber}.jpg`
+  const url = `http://sdc-legos.s3.amazonaws.com/images/toy_0${stringNumber}.jpg`;
   return url;
 };
 
@@ -36,11 +37,27 @@ class Picture {
 const products = [];
 const pictures = [];
 
-// for (let i = 0; i < 1000; i += 1) {
-//   products.push(new LegoData());
-// }
+for (let i = 0; i < 1000; i += 1) {
+  products.push(new LegoData());
+}
 
 for (let i = 0; i < 1000; i += 1) {
-  pictures.push(new Picture(i < 50 ? i : Math.floor(Math.random() * 1000)));
+  pictures.push(new Picture(i));
 }
-console.log(pictures);
+
+// (async () => {
+//   const csv = new ObjectsToCsv(products);
+//   await csv.toDisk('./test.csv');
+// })();
+
+const productsCsv = new ObjectsToCsv(products);
+const picturesCsv = new ObjectsToCsv(pictures);
+productsCsv.toDisk('./sdc-backend/products.csv')
+  .then(() => {
+    console.log('products finished csv-ing');
+    return picturesCsv.toDisk('./sdc-backend/pictures.csv');
+  }).then(() => console.log('pictures finished csv-ing'));
+
+// for (let i = 0; i < 1000; i += 1) {
+//   pictures.push(new Picture(i < 50 ? i : Math.floor(Math.random() * 1000)));
+// }
