@@ -13,16 +13,16 @@ const randomPicGenerator = (num) => {
 // 10 million Lego Records
 class LegoData {
   constructor() {
-    this.brand = faker.company.companyName();
     this.name = faker.commerce.productName();
-    this.reviewAvg = faker.random.number({ min: 3.5, max: 5, precision: 0.01 });
+    this.brand = faker.company.companyName();
     this.price = faker.random.number({ min: 10, max: 89 });
+    this.reviewTotal = faker.random.number(200);
+    this.reviewAvg = faker.random.number({ min: 3.5, max: 5, precision: 0.01 });
     this.quantity = faker.random.number(13);
     this.ageRec = faker.random.objectElement({ four: 4, ten: 10, thirteen: 13 });
     this.pieceCount = faker.random.number({ min: 50, max: 2300 });
     this.vipPoints = faker.random.number(200);
     this.itemNum = faker.random.number({ min: 12530, max: 25320 });
-    this.reviewTotal = faker.random.number(200);
   }
 }
 // 50 million picture Records
@@ -41,7 +41,7 @@ for (let i = 0; i < 1000; i += 1) {
   products.push(new LegoData());
 }
 
-for (let i = 0; i < 1000; i += 1) {
+for (let i = 1; i < 1001; i += 1) {
   pictures.push(new Picture(i));
 }
 

@@ -28,12 +28,19 @@ CREATE TABLE "product" (
 );
 
 CREATE TABLE "picture" (
-  "picture_id" serial,
+  "id" serial,
   "url" varchar(400),
+  -- "product_id" integer,
   "product_id" integer references product(id),
-  PRIMARY KEY ("picture_id")
+  PRIMARY KEY ("id")
 );
 
 -- INSERT INTO "picture"("product_id") VALUES ('3');
-SELECT * from picture;
-SELECT * from product;
+
+\copy product(name, brand, price, "reviewTotal", "reviewAvg", quantity, "ageRec", "pieceCount", "vipPoints", "itemNum") FROM 'sdc-backend/products.csv' DELIMITER ',' CSV HEADER;
+
+\copy picture(url, product_id) FROM 'sdc-backend/pictures.csv' DELIMITER ',' CSV HEADER;
+
+SELECT * from picture WHERE id BETWEEN 1 AND 5;
+SELECT * FROM product WHERE id BETWEEN 1 AND 5;
+
