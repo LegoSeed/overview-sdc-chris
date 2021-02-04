@@ -11,6 +11,7 @@ module.exports = {
     path: OUT_DIR,
     filename: 'build.js',
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
