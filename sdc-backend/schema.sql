@@ -1,4 +1,4 @@
--- this dummydrop database is to provide a database to connect to initially so I can drop the other database I need to drop
+-- this dummydrop database is to provide a database to connect to initially so I can drop the other database I need to drop, need database named dummydrop for this to work
 -- could also create a new role here, altrole,
 -- this would allow anyone to run this command no matter what machine they were on
 \c dummydrop altchris
@@ -16,22 +16,21 @@ CREATE TABLE "product" (
   "id" serial,
   "name" varchar(50),
   "brand" varchar(50),
+  "itemNum" smallint,
   "price" real,
   "reviewTotal" smallint,
   "reviewAvg" real,
-  "quantity" smallint,
   "ageRec" smallint,
   "pieceCount" smallint,
   "vipPoints" smallint,
-  "itemNum" smallint,
+  "quantity" smallint,
   PRIMARY KEY ("id")
 );
 
 CREATE TABLE "picture" (
   "id" serial,
-  "url" varchar(400),
-  -- "product_id" integer,
   "product_id" integer references product(id),
+  "url" varchar(400),
   PRIMARY KEY ("id")
 );
 
