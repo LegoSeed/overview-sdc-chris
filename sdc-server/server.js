@@ -7,14 +7,11 @@ const db = require('../sdc-backend/crud.js');
 
 const app = express();
 app.use(compression());
-app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
 
 // app.use(express.static('/Users/jd/HackReactor/Product-Overview/public'));
 app.get('/test', (req, res) => {
-  db.findById(9900002)
-    .then((result) => res.status(200).send(result))
-    .catch((err) => res.status(400).send({ err, message: 'Error GET-ing by Id' }));
 });
 
 app.get('/', (req, res) => {
@@ -34,14 +31,12 @@ app.get('/legos', (req, res) => {
   });
 });
 
-app.get('/legos/ducati', (req, res) => {
-  db.getDucatiLego((err, result) => {
-    if (err) {
-      res.status(404).send(err);
-    } else {
-      res.status(200).send(result);
-    }
-  });
+app.get('/legos/:id', (req, res) => {
+  const { id } = req.params;
+
+  db.findById(id)
+    .then((result) => res.status(200).send(result))
+    .catch((err) => res.status(400).send({ err, message: 'Error GET-ing by Id' }));
 });
 
 app.post('/legos', (req, res) => {

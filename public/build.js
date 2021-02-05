@@ -179,30 +179,30 @@ var App = /*#__PURE__*/function (_React$Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(App, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.getDucatiLego();
-    }
-  }, {
-    key: "getDucatiLego",
-    value: function getDucatiLego() {
-      var _this2 = this;
-
-      // Axios.get('http://3.141.14.195:3003/legos/ducati')
-      axios__WEBPACK_IMPORTED_MODULE_8___default.a.get('http://localhost:3003/legos/ducati').then(function (results) {
-        _this2.setState({
-          legos: results.data,
-          pictures: results.data.pictures
-        });
-      });
+      this.findById(24);
     }
   }, {
     key: "getAllLegos",
     value: function getAllLegos() {
-      var _this3 = this;
+      var _this2 = this;
 
       // Axios.get('http://3.141.14.195:3003/legos')
       axios__WEBPACK_IMPORTED_MODULE_8___default.a.get('http://localhost:3003/legos/ducati').then(function (results) {
-        _this3.setState({
+        _this2.setState({
           legos: results.data
+        });
+      });
+    }
+  }, {
+    key: "findById",
+    value: function findById(id) {
+      var _this3 = this;
+
+      // Axios.get('http://3.141.14.195:3003/legos/ducati')
+      axios__WEBPACK_IMPORTED_MODULE_8___default.a.get("http://localhost:3003/legos/".concat(id)).then(function (results) {
+        _this3.setState({
+          legos: results.data,
+          pictures: results.data.pictures
         });
       });
     }

@@ -26,18 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getDucatiLego();
-  }
-
-  getDucatiLego() {
-    // Axios.get('http://3.141.14.195:3003/legos/ducati')
-    Axios.get('http://localhost:3003/legos/ducati')
-      .then((results) => {
-        this.setState({
-          legos: results.data,
-          pictures: results.data.pictures,
-        });
-      });
+    this.findById(24);
   }
 
   getAllLegos() {
@@ -46,6 +35,17 @@ class App extends React.Component {
       .then((results) => {
         this.setState({
           legos: results.data,
+        });
+      });
+  }
+
+  findById(id) {
+    // Axios.get('http://3.141.14.195:3003/legos/ducati')
+    Axios.get(`http://localhost:3003/legos/${id}`)
+      .then((results) => {
+        this.setState({
+          legos: results.data,
+          pictures: results.data.pictures,
         });
       });
   }
