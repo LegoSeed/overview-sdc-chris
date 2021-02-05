@@ -11,18 +11,11 @@ const randomPicGenerator = (num) => {
 };
 // 50 million picture Records
 // spread these out randomly amongst 10 million records
-class Picture {
-  constructor(id) {
-    this.url = randomPicGenerator(Math.floor(Math.random() * 1000));
-    // this.product_id = Math.floor(Math.random() * 10000000);
-    this.product_id = id;
-  }
-}
 
-const writePictures = fs.createWriteStream('pictures.csv');
+const writePictures = fs.createWriteStream('sdc-backend/pictures.csv');
 
 const createLine = (id) => {
-  const url = randomPicGenerator(Math.floor(Math.random() * 1000));
+  const url = randomPicGenerator(Math.floor((Math.random() * 999) + 1));
   const product_id = id;
 
   return (
@@ -31,24 +24,23 @@ const createLine = (id) => {
 };
 
 const generateCsv = (writer, encoding, callback) => {
-  let i = 10000;
+  let i = 50000000;
 
   function write() {
     let ok = true;
     do {
       i -= 1;
-      const data = createLine(i > 5000 ? Math.floor(Math.random() * 10000000) : i);
-      if (i === 0) {
+      const data = createLine(Math.floor((Math.random() * 9999999) + 1));
+      if (i === 1) {
         writer.write(data, encoding, callback);
       } else {
         ok = writer.write(data, encoding);
       }
-    } while (i > 0 && ok);
+    } while (i > 1 && ok);
     if (i > 0) {
       writer.once('drain', write);
     }
   }
-
   write();
 };
 console.time('pictures');

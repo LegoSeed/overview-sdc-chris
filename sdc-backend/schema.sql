@@ -3,7 +3,7 @@
 -- this would allow anyone to run this command no matter what machine they were on
 \c dummydrop altchris
 
-DROP DATABASE IF EXISTS "sdc-legos";
+-- DROP DATABASE IF EXISTS "sdc-legos";
 
 CREATE DATABASE "sdc-legos" OWNER "altchris";
 

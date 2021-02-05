@@ -1,7 +1,7 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const writeProducts = fs.createWriteStream('products.csv');
+const writeProducts = fs.createWriteStream('sdc-backend/products.csv');
 
 const createLine = () => {
   const name = faker.commerce.productName();
