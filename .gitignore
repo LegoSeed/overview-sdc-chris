@@ -4,5 +4,14 @@ build/*
 # dependencies
 /node_modules
 
-# ducati buck uri 
+# ducati buck uri
 s3://legopics/Ducati/ (from 1 - 10)
+
+unsplash-scraper/config.js
+images
+
+public/build.js
+public/build.js.map
+
+pictures.csv
+products.csv
