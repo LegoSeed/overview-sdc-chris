@@ -8,3 +8,5 @@ const client = new Client({ connectionString });
 client.connect()
   .then(() => console.log('Connected to PostgreSQL Legos!'))
   .catch((err) => console.log('Error connecting to PostgrSQL Legos', err));
+
+module.exports.client = client;

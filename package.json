@@ -11,7 +11,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon backend/server/start",
+    "start": "nodemon sdc-server/start",
     "prod": "node backend/server/start",
     "build": "webpack",
     "seed": "node backend/mongo/seed",
