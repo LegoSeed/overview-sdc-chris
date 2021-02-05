@@ -7,7 +7,11 @@ module.exports.findMany = () => {
 
 // get by id
 module.exports.findById = (id) => (
-  client.query(`SELECT * FROM product WHERE id = ${id}`)
-    .then((result) => result.rows)
-    .catch((err) => err)
+  client.query(`SELECT * FROM picture WHERE product_id = ${id}`)
+    .then((pictures) => (
+      client.query(`SELECT * FROM product WHERE id = ${id}`)
+        .then((product) => ({
+          ...product.rows[0], pictures: pictures.rows,
+        }))
+    ))
 );
