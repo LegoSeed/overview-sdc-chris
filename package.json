@@ -20,8 +20,9 @@
     "test:watch": "jest --watch --detectOpenHandles",
     "psql:create": "createdb sdc-legos",
     "psql:drop": "dropdb sdc-legos",
-    "csv:build": "node sdc-backend/createCsv.js",
-    "psql:schema": "psql dummydrop  < sdc-backend/schema.sql"
+    "csv:build:pictures": "node sdc-backend/createPictureCsv.js",
+    "csv:build:products": "node sdc-backend/createProductCsv.js",
+    "psql:schema:build": "psql dummydrop  < sdc-backend/schema.sql"
   },
   "keywords": [],
   "author": "Hack Reactor <curriculum.team@hackreactor.com>",
