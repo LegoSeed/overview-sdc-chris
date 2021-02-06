@@ -34,16 +34,6 @@ class App extends React.Component {
     this.findById(24);
   }
 
-  getAllLegos() {
-    // Axios.get('http://3.141.14.195:3003/legos')
-    Axios.get('http://localhost:3003/legos/ducati')
-      .then((results) => {
-        this.setState({
-          legos: results.data,
-        });
-      });
-  }
-
   findById(id) {
     // Axios.get('http://3.141.14.195:3003/legos/ducati')
     Axios.get(`http://localhost:3003/legos/${id}`)

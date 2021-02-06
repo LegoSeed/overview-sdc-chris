@@ -19,16 +19,6 @@ app.get('/', (req, res) => {
   res.sendStatus(200);
 });
 
-app.get('/legos', (req, res) => {
-  db.getAllLegos((err, results) => {
-    if (err) {
-      res.status(404).send(err);
-    } else {
-      res.status(200).send(results);
-    }
-  });
-});
-
 app.get('/legos/:id', (req, res) => {
   const { id } = req.params;
 
