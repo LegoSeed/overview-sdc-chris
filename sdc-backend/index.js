@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { Client } = require('pg');
 
 const connectionString = 'postgres://altchris:password@localhost:5432/sdc-legos';

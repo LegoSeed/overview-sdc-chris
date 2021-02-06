@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
@@ -9,6 +11,8 @@ import ProductInfo from './productInfo';
 import CarouselComponent from './carousel';
 import ProductFooter from './productFooter';
 import Header from './header';
+
+import { createObject } from '../../../sdc-backend/objectGenerator';
 
 const AppComponent = Styled.div`
  background-color: #F7F7F7
@@ -23,6 +27,7 @@ class App extends React.Component {
       bagCount: 0,
     };
     this.addToBag = this.addToBag.bind(this);
+    this.postProduct = this.postProduct.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +55,13 @@ class App extends React.Component {
       });
   }
 
+  postProduct() {
+    const newObj = createObject();
+    Axios.post('/legos', { product: newObj })
+      .then(({ data }) => console.log(data))
+      .catch((err) => console.log(err));
+  }
+
   addToBag(quantity) {
     this.setState({
       bagCount: (this.state.bagCount + quantity),
@@ -62,6 +74,7 @@ class App extends React.Component {
 
         <Row>
           <Header bagCount={this.state.bagCount} />
+          <button onClick={this.postProduct}> Click to Generate new object and POST </button>
         </Row>
 
         <Container>

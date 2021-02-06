@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const compression = require('compression');
 const express = require('express');
 const path = require('path');
@@ -7,25 +8,22 @@ const db = require('../sdc-backend/crud.js');
 
 const app = express();
 app.use(compression());
+app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
 
-// app.use(express.static('/Users/jd/HackReactor/Product-Overview/public'));
 app.get('/test', (req, res) => {
 });
 
 app.get('/', (req, res) => {
   res.sendStatus(200);
-  // (status(200).send('the GET server says "hello!"');
 });
 
 app.get('/legos', (req, res) => {
   db.getAllLegos((err, results) => {
     if (err) {
-      // console.log(err);
       res.status(404).send(err);
     } else {
-      // console.log(results);
       res.status(200).send(results);
     }
   });
@@ -40,7 +38,11 @@ app.get('/legos/:id', (req, res) => {
 });
 
 app.post('/legos', (req, res) => {
-  res.send('Hello from the LEGO server!');
+  const { product } = req.body;
+  console.log(product);
+  db.postProduct(product)
+    .then(({ rows }) => res.status(200).send(rows[0]))
+    .catch((err) => res.status(400).send({ err, message: 'Error POSTING fake obj' }));
 });
 
 module.exports = app;
