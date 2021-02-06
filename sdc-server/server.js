@@ -15,10 +15,6 @@ app.use(cors());
 app.get('/test', (req, res) => {
 });
 
-app.get('/', (req, res) => {
-  res.sendStatus(200);
-});
-
 app.get('/legos/:id', (req, res) => {
   const { id } = req.params;
 

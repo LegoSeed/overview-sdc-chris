@@ -22,9 +22,17 @@ module.exports.postProduct = ({
   name, brand, price, reviewTotal, reviewAvg, quantity, ageRec, pieceCount, vipPoints, itemNum,
 }) => (
   client.query(`
+  WITH inserted_product AS(
     INSERT INTO product (
       name, brand, "itemNum", price, "reviewTotal", "reviewAvg", "ageRec", "pieceCount", "vipPoints", quantity)
     VALUES(
       '${name}', '${brand}', ${itemNum}, ${price}, ${reviewTotal}, ${reviewAvg}, ${ageRec}, ${pieceCount}, ${vipPoints}, ${quantity})
-    RETURNING *`)
+    RETURNING *
+    )
+    INSERT INTO picture(product_id, url) VALUES(
+      (SELECT id FROM inserted_product),
+      'http://sdc-legos.s3.amazonaws.com/images/toy_0${Math.floor((Math.random() * 999) + 1).toString().padStart(4, '0')}.jpg'
+    )
+    RETURNING *
+  `)
 );
