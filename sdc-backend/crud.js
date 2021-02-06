@@ -33,6 +33,6 @@ module.exports.postProduct = ({
       (SELECT id FROM inserted_product),
       'http://sdc-legos.s3.amazonaws.com/images/toy_0${Math.floor((Math.random() * 999) + 1).toString().padStart(4, '0')}.jpg'
     )
-    RETURNING *
-  `)
+    RETURNING product_id
+  `).then(({ rows }) => client.query(`SELECT * FROM product WHERE id = ${rows[0].product_id}`))
 );
