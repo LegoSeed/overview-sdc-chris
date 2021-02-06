@@ -16,14 +16,15 @@ module.exports.findById = (id) => (
         }))
     ))
 );
-
+// MUST INCLUDE QUOTES TO PRESERVE CAMELCASE IN COLUMNS,
+// MUST USE QUOTES AROUND STRING VALUES YOU WANT TO INSERT
 module.exports.postProduct = ({
   name, brand, price, reviewTotal, reviewAvg, quantity, ageRec, pieceCount, vipPoints, itemNum,
-}) => {
-  console.log(name, brand, price, reviewTotal, reviewAvg);
-  const qString = 'INSERT INTO product (name, brand, "itemNum", price, "reviewTotal", "reviewAvg", "ageRec", "pieceCount", "vipPoints", quantity) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *';
-  const params = [
-    name, brand, itemNum, price, reviewTotal, reviewAvg, ageRec, pieceCount, vipPoints, quantity,
-  ];
-  return client.query(qString, params);
-};
+}) => (
+  client.query(`
+    INSERT INTO product (
+      name, brand, "itemNum", price, "reviewTotal", "reviewAvg", "ageRec", "pieceCount", "vipPoints", quantity)
+    VALUES(
+      '${name}', '${brand}', ${itemNum}, ${price}, ${reviewTotal}, ${reviewAvg}, ${ageRec}, ${pieceCount}, ${vipPoints}, ${quantity})
+    RETURNING *`)
+);
