@@ -1,4 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
+require('newrelic');
 const compression = require('compression');
 const express = require('express');
 const path = require('path');

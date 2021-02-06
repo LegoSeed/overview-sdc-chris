@@ -36,3 +36,15 @@ module.exports.postProduct = ({
     RETURNING product_id
   `).then(({ rows }) => client.query(`SELECT * FROM product WHERE id = ${rows[0].product_id}`))
 );
+
+// module.exports.postProduct = ({
+//   name, brand, price, reviewTotal, reviewAvg, quantity, ageRec, pieceCount, vipPoints, itemNum,
+// }) => (
+//   client.query(`
+//     INSERT INTO product (
+//       name, brand, "itemNum", price, "reviewTotal", "reviewAvg", "ageRec", "pieceCount", "vipPoints", quantity)
+//     VALUES(
+//       '${name}', '${brand}', ${itemNum}, ${price}, ${reviewTotal}, ${reviewAvg}, ${ageRec}, ${pieceCount}, ${vipPoints}, ${quantity})
+//     RETURNING *
+//   `)
+// );
