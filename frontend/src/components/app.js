@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-access-state-in-setstate */
@@ -37,10 +38,11 @@ class App extends React.Component {
   findById(id) {
     // Axios.get('http://3.141.14.195:3003/legos/ducati')
     Axios.get(`http://localhost:3003/legos/${id}`)
-      .then((results) => {
+      .then(({ data }) => {
+        console.log(data);
         this.setState({
-          legos: results.data,
-          pictures: results.data.pictures,
+          legos: data,
+          pictures: data.pictures,
         });
       });
   }

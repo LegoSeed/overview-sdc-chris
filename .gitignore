@@ -13,8 +13,8 @@ images
 public/build.js
 public/build.js.map
 
-pictures.csv
-products.csv
+sdc-backend/pictures.csv
+sdc-backend/products.csv
 
 newrelic.js
 newrelic_agent.log

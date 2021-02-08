@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
 
-app.get('/test', (req, res) => {
-});
+// app.get('/test', (req, res) => {
+// });
 
 app.get('/legos/:id', (req, res) => {
   const { id } = req.params;
