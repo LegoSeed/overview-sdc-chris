@@ -36,8 +36,8 @@ class App extends React.Component {
   }
 
   findById(id) {
-    // Axios.get('http://3.141.14.195:3003/legos/ducati')
-    Axios.get(`http://localhost:3003/legos/${id}`)
+    Axios.get(`http://0.0.0.0:3003/legos/${id}`)
+    // Axios.get(`/legos/${id}`)
       .then(({ data }) => {
         console.log(data);
         this.setState({
@@ -49,7 +49,8 @@ class App extends React.Component {
 
   postProduct() {
     const newObj = createObject();
-    Axios.post('/legos', { product: newObj })
+    // Axios.post('/legos', { product: newObj })
+    Axios.post('http://0.0.0.0:3003/legos', { product: newObj })
       .then(({ data }) => console.log(data))
       .catch((err) => console.log(err));
   }

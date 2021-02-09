@@ -19,7 +19,6 @@ app.use(cors());
 
 app.get('/legos/:id', (req, res) => {
   const { id } = req.params;
-
   db.findById(id)
     .then((result) => res.status(200).send(result))
     .catch((err) => res.status(400).send({ err, message: 'Error GET-ing by Id' }));
