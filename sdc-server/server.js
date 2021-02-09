@@ -11,8 +11,8 @@ const db = require('../sdc-backend/crud.js');
 const app = express();
 app.use(compression());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public')));
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../public')));
 
 // app.get('/test', (req, res) => {
 // });
