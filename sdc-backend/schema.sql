@@ -1,6 +1,11 @@
 -- this dummydrop database is to provide a database to connect to initially so I can drop the other database I need to drop, need database named dummydrop for this to work
 -- could also create a new role here, altrole,
 -- this would allow anyone to run this command no matter what machine they were on
+-- CREATE ROLE altchris;
+-- ALTER ROLE altchris WITH LOGIN;
+-- ALTER USER altchris CREATEDB;
+-- ALTER USER altchris WITH PASSWORD 'password';
+
 \c dummydrop altchris
 
 -- DROP DATABASE IF EXISTS "sdc-legos";

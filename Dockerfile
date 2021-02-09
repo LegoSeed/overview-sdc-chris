@@ -1,4 +1,16 @@
-FROM node:8.10-alpine
+# FROM alpine:latest
+
+# WORKDIR /public
+
+# COPY . /public
+
+# RUN npm install
+
+# EXPOSE 3003
+
+# CMD [ "node", "sdc-server/start" ]
+
+FROM alpine:latest
 
 WORKDIR /public
 
@@ -8,4 +20,4 @@ RUN npm install
 
 EXPOSE 3003
 
-CMD [ "npm", "run", "prod" ]
+CMD [ "node", "sdc-server/start" ]
