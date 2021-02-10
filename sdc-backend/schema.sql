@@ -34,7 +34,7 @@ CREATE TABLE "product" (
 
 CREATE TABLE "picture" (
   "id" serial,
-  "product_id" integer references product(id),
+  "product_id" integer,
   "url" varchar(400),
   PRIMARY KEY ("id")
 );
@@ -49,4 +49,3 @@ SELECT * from picture WHERE id BETWEEN 1 AND 5;
 SELECT * FROM product WHERE id BETWEEN 1 AND 5;
 
 -- CREATE INDEX picture_product_id ON picture using hash (product_id);
-
