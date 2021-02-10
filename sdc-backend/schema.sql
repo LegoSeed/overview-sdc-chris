@@ -48,4 +48,4 @@ CREATE TABLE "picture" (
 SELECT * from picture WHERE id BETWEEN 1 AND 5;
 SELECT * FROM product WHERE id BETWEEN 1 AND 5;
 
--- CREATE INDEX picture_product_id ON picture using hash (product_id);
+CREATE INDEX picture_product_id ON picture using hash (product_id);
