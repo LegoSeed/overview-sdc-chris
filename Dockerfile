@@ -10,7 +10,7 @@
 
 # CMD [ "node", "sdc-server/start" ]
 
-FROM node:8-alpine
+FROM node:latest
 
 WORKDIR /app
 
