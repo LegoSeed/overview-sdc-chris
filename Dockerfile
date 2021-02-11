@@ -22,5 +22,6 @@ COPY . .
 RUN npm run build
 
 EXPOSE 3003
+# EXPOSE 4001 4002 4003
 
 CMD [ "node", "sdc-server/start" ]

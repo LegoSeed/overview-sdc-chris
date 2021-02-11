@@ -1,11 +1,27 @@
 version: '3'
 services:
-  productoverview:
-    build: ./
-    depends_on:
-      - 'database'
+  first:
+    container_name: first
+    image: first
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     ports:
-      - '3003:3003'
-
-  database:
-    image: postgres:latest
+      - 4001:3003
+  second:
+    container_name: second
+    image: second
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4002:3003
+  nginx:
+    build:
+      context: ./nginx/
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - first
+      - second
