@@ -14,13 +14,6 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
 
-// app.get('/test', (req, res) => {
-// });
-// loader io
-// app.get('/loaderio-c2597594a15ee120cf5063c543a5853c/', express.static(
-//   __dirname, '../public/loaderio-c2597594a15ee120cf5063c543a5853c.txt'
-// ));
-
 app.get('/legos/:id', (req, res) => {
   const { id } = req.params;
   db.findById(id)

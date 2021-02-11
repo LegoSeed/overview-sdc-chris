@@ -16,12 +16,36 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - 4002:3003
+  third:
+    container_name: third
+    image: third
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4003:3003
+  fourth:
+    container_name: fourth
+    image: fourth
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4004:3003
+  fifth:
+    container_name: fifth
+    image: fifth
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4005:3003
   nginx:
     build:
       context: ./nginx/
       dockerfile: ./Dockerfile
     ports:
-      - 8080:8080
+      - 80:80
     depends_on:
       - first
       - second

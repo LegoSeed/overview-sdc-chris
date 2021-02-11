@@ -18,6 +18,7 @@ import { createObject } from '../../../sdc-backend/objectGenerator';
 const AppComponent = Styled.div`
  background-color: #F7F7F7
 `;
+const containerId = Math.random() * 10;
 
 class App extends React.Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class App extends React.Component {
     // Axios.get(`http://3.17.151.84/legos/${id}`)
     Axios.get(`/legos/${id}`)
       .then(({ data }) => {
-        console.log(data);
+        console.log(data, containerId);
         this.setState({
           legos: data,
           pictures: data.pictures,

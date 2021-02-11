@@ -7,8 +7,8 @@ export const options = {
   // target is the VUs
   stages: [
     { duration: '1s', target: 20 },
-    { duration: '1s', target: 550 },
-    { duration: '60s', target: 550 },
+    { duration: '2s', target: 700 },
+    { duration: '30s', target: 700 },
   ],
 };
 
@@ -40,7 +40,7 @@ export const options = {
 // }
 
 export default function () {
-  http.get(`http://localhost:4001/legos/${Math.floor(Math.random() * 10000000) + 1}`);
+  http.get(`http://localhost/legos/${Math.floor(Math.random() * 10000000) + 1}`);
   sleep(1);
 }
 // for post route
