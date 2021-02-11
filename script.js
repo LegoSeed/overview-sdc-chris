@@ -7,35 +7,35 @@ export const options = {
   // target is the VUs
   stages: [
     { duration: '1s', target: 20 },
-    { duration: '1s', target: 250 },
-    { duration: '60s', target: 250 },
+    { duration: '1s', target: 400 },
+    { duration: '60s', target: 400 },
   ],
 };
 
-const obj = JSON.stringify({
-  product: {
-    name: 'testname',
-    brand: 'test company',
-    price: 33,
-    reviewTotal: 29,
-    reviewAvg: 4.5,
-    quantity: 13,
-    ageRec: 14,
-    pieceCount: 2000,
-    vipPoints: 200,
-    itemNum: 1234,
-  },
-});
+// const obj = JSON.stringify({
+//   product: {
+//     name: 'testname',
+//     brand: 'test company',
+//     price: 33,
+//     reviewTotal: 29,
+//     reviewAvg: 4.5,
+//     quantity: 13,
+//     ageRec: 14,
+//     pieceCount: 2000,
+//     vipPoints: 200,
+//     itemNum: 1234,
+//   },
+// });
 
-const params = {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-};
+// const params = {
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// };
 // for get route
 export default function () {
   http.get(`http://3.17.151.84/legos/${Math.floor(Math.random() * 10000000) + 1}`);
-  http.post('http://3.17.151.84/legos', obj, params);
+  // http.post('http://3.17.151.84/legos', obj, params);
   sleep(1);
 }
 // for post route
