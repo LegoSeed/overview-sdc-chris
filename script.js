@@ -7,8 +7,8 @@ export const options = {
   // target is the VUs
   stages: [
     { duration: '1s', target: 20 },
-    { duration: '1s', target: 400 },
-    { duration: '60s', target: 400 },
+    { duration: '1s', target: 600 },
+    { duration: '20s', target: 600 },
   ],
 };
 
