@@ -40,6 +40,46 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - 4005:3003
+  six:
+    container_name: six
+    image: six
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4006:3003
+  seven:
+    container_name: seven
+    image: seven
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4007:3003
+  eight:
+    container_name: eight
+    image: eight
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4008:3003
+  nine:
+    container_name: nine
+    image: nine
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4009:3003
+  ten:
+    container_name: ten
+    image: ten
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 4010:3003
   nginx:
     build:
       context: ./nginx/
@@ -49,3 +89,11 @@ services:
     depends_on:
       - first
       - second
+      - third
+      - fourth
+      - fifth
+      - six
+      - seven
+      - eight
+      - nine
+      - ten
